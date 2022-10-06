@@ -1,0 +1,7 @@
+<svg id="_24x24-parking" data-name="24x24-parking" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <path id="boundingbox" d="M0,0H48V48H0Z" fill="#f15a29" opacity="0"/>
+  <g id="parking" transform="translate(6 6)">
+    <path id="Rectangle_5546" data-name="Rectangle 5546" d="M-1-1H35V35H-1ZM31,3H3V31H31Z" transform="translate(1 1)" fill="#f15a29"/>
+    <path id="Path_19790" data-name="Path 19790" d="M12,28.333H8V7H18a6.217,6.217,0,0,1,6,6.4,6.217,6.217,0,0,1-6,6.4H12Zm0-12.8h6a2.138,2.138,0,0,0,0-4.267H12Z" transform="translate(2 1)" fill="#f15a29"/>
+  </g>
+</svg>

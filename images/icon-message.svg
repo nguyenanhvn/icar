@@ -1,0 +1,12 @@
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 25 25">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.192" cy="0.995" r="1.09" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#09f"/>
+      <stop offset="0.61" stop-color="#a033ff"/>
+      <stop offset="0.935" stop-color="#ff5280"/>
+      <stop offset="1" stop-color="#ff7061"/>
+    </radialGradient>
+  </defs>
+  <path id="Path" d="M124.5,122c-7.042,0-12.5,5.158-12.5,12.125a11.86,11.86,0,0,0,3.926,8.968,1,1,0,0,1,.336.713l.068,2.223a1,1,0,0,0,1.4.884l2.481-1.1a1,1,0,0,1,.668-.049,13.631,13.631,0,0,0,3.618.48c7.042,0,12.5-5.158,12.5-12.125S131.542,122,124.5,122Z" transform="translate(-112 -122)" fill-rule="evenodd" fill="url(#radial-gradient)"/>
+  <path id="Path-2" data-name="Path" d="M268.81,398.493l3.672-5.826a1.875,1.875,0,0,1,2.711-.5l2.92,2.19a.75.75,0,0,0,.9,0l3.944-2.993a.594.594,0,0,1,.861.79l-3.672,5.826a1.875,1.875,0,0,1-2.711.5l-2.921-2.19a.75.75,0,0,0-.9,0l-3.944,2.993A.594.594,0,0,1,268.81,398.493Z" transform="translate(-263.817 -382.822)" fill="#fff" fill-rule="evenodd"/>
+</svg>

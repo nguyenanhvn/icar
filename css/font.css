@@ -1,0 +1,208 @@
+@font-face {
+    font-family: 'SVN-Circular';
+    src: url('../fonts/SVN-Circular-MediumItalic.eot');
+    src: url('../fonts/SVN-Circular-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-MediumItalic.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-MediumItalic.woff') format('woff'),
+        url('../fonts/SVN-Circular-MediumItalic.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-MediumItalic.svg#SVN-Circular-MediumItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular';
+    src: url('../fonts/SVN-Circular-Light.eot');
+    src: url('../fonts/SVN-Circular-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-Light.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-Light.woff') format('woff'),
+        url('../fonts/SVN-Circular-Light.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-Light.svg#SVN-Circular-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular';
+    src: url('../fonts/SVN-Circular-LightItalic.eot');
+    src: url('../fonts/SVN-Circular-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-LightItalic.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-LightItalic.woff') format('woff'),
+        url('../fonts/SVN-Circular-LightItalic.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-LightItalic.svg#SVN-Circular-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular';
+    src: url('../fonts/SVN-Circular-Regular.eot');
+    src: url('../fonts/SVN-Circular-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-Regular.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-Regular.woff') format('woff'),
+        url('../fonts/SVN-Circular-Regular.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-Regular.svg#SVN-Circular-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular';
+    src: url('../fonts/SVN-Circular-Medium.eot');
+    src: url('../fonts/SVN-Circular-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-Medium.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-Medium.woff') format('woff'),
+        url('../fonts/SVN-Circular-Medium.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-Medium.svg#SVN-Circular-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular';
+    src: url('../fonts/SVN-Circular-Italic.eot');
+    src: url('../fonts/SVN-Circular-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-Italic.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-Italic.woff') format('woff'),
+        url('../fonts/SVN-Circular-Italic.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-Italic.svg#SVN-Circular-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular';
+    src: url('../fonts/SVN-Circular-ThinItalic.eot');
+    src: url('../fonts/SVN-Circular-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-ThinItalic.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-ThinItalic.woff') format('woff'),
+        url('../fonts/SVN-Circular-ThinItalic.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-ThinItalic.svg#SVN-Circular-ThinItalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular';
+    src: url('../fonts/SVN-Circular-Thin.eot');
+    src: url('../fonts/SVN-Circular-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-Thin.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-Thin.woff') format('woff'),
+        url('../fonts/SVN-Circular-Thin.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-Thin.svg#SVN-Circular-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular';
+    src: url('../fonts/SVN-Circular-Black.eot');
+    src: url('../fonts/SVN-Circular-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-Black.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-Black.woff') format('woff'),
+        url('../fonts/SVN-Circular-Black.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-Black.svg#SVN-Circular-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular';
+    src: url('../fonts/SVN-Circular-BoldItalic.eot');
+    src: url('../fonts/SVN-Circular-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-BoldItalic.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-BoldItalic.woff') format('woff'),
+        url('../fonts/SVN-Circular-BoldItalic.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-BoldItalic.svg#SVN-Circular-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular';
+    src: url('../fonts/SVN-Circular-BlackItalic.eot');
+    src: url('../fonts/SVN-Circular-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-BlackItalic.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-BlackItalic.woff') format('woff'),
+        url('../fonts/SVN-Circular-BlackItalic.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-BlackItalic.svg#SVN-Circular-BlackItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular Book';
+    src: url('../fonts/SVN-Circular-BookItalic.eot');
+    src: url('../fonts/SVN-Circular-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-BookItalic.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-BookItalic.woff') format('woff'),
+        url('../fonts/SVN-Circular-BookItalic.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-BookItalic.svg#SVN-Circular-BookItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular ExtraBlack';
+    src: url('../fonts/SVN-Circular-ExtraBlackItalic.eot');
+    src: url('../fonts/SVN-Circular-ExtraBlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-ExtraBlackItalic.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-ExtraBlackItalic.woff') format('woff'),
+        url('../fonts/SVN-Circular-ExtraBlackItalic.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-ExtraBlackItalic.svg#SVN-Circular-ExtraBlackItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular';
+    src: url('../fonts/SVN-Circular-Bold.eot');
+    src: url('../fonts/SVN-Circular-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-Bold.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-Bold.woff') format('woff'),
+        url('../fonts/SVN-Circular-Bold.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-Bold.svg#SVN-Circular-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular Book';
+    src: url('../fonts/SVN-Circular-Book.eot');
+    src: url('../fonts/SVN-Circular-Book.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-Book.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-Book.woff') format('woff'),
+        url('../fonts/SVN-Circular-Book.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-Book.svg#SVN-Circular-Book') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Circular ExtraBlack';
+    src: url('../fonts/SVN-Circular-ExtraBlack.eot');
+    src: url('../fonts/SVN-Circular-ExtraBlack.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Circular-ExtraBlack.woff2') format('woff2'),
+        url('../fonts/SVN-Circular-ExtraBlack.woff') format('woff'),
+        url('../fonts/SVN-Circular-ExtraBlack.ttf') format('truetype'),
+        url('../fonts/SVN-Circular-ExtraBlack.svg#SVN-Circular-ExtraBlack') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+

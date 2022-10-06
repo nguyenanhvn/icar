@@ -1,0 +1,13 @@
+<svg id="_24x24-tiktok" data-name="24x24-tiktok" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_163" data-name="Rectangle 163" width="15.403" height="18" fill="#fff" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <rect id="boundingbox" width="24" height="24" fill="#fff" opacity="0"/>
+  <g id="Group_519" data-name="Group 519" transform="translate(4.299 3)">
+    <g id="Group_518" data-name="Group 518" transform="translate(0 0.001)" clip-path="url(#clip-path)">
+      <path id="Path_8407" data-name="Path 8407" d="M15.4,7.283q-.221.021-.443.023a4.805,4.805,0,0,1-4.02-2.173v7.4A5.469,5.469,0,1,1,5.469,7.062c.114,0,.226.01.338.017v2.7a2.864,2.864,0,0,0-.338-.034,2.791,2.791,0,0,0,0,5.582,2.86,2.86,0,0,0,2.9-2.757L8.4,0h2.578A4.8,4.8,0,0,0,15.4,4.288V7.283" transform="translate(0 0)" fill="#fff" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

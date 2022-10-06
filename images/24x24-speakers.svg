@@ -1,0 +1,8 @@
+<svg id="_24x24-speaker" data-name="24x24-speaker" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <path id="boundingbox" d="M0,0H48V48H0Z" fill="#fff" opacity="0"/>
+  <g id="speaker" transform="translate(8 4)">
+    <path id="Rectangle_5547" data-name="Rectangle 5547" d="M4.833-1H24.278a5.925,5.925,0,0,1,5.833,6V33a5.925,5.925,0,0,1-5.833,6H4.833A5.925,5.925,0,0,1-1,33V5A5.925,5.925,0,0,1,4.833-1ZM24.278,35a1.975,1.975,0,0,0,1.944-2V5a1.975,1.975,0,0,0-1.944-2H4.833A1.975,1.975,0,0,0,2.889,5V33a1.975,1.975,0,0,0,1.944,2Z" transform="translate(1 1)" fill="#fff"/>
+    <path id="Ellipse_28" data-name="Ellipse 28" d="M7-1A8,8,0,1,1-1,7,8.009,8.009,0,0,1,7-1ZM7,11A4,4,0,1,0,3,7,4,4,0,0,0,7,11Z" transform="translate(9 17)" fill="#fff"/>
+    <circle id="Ellipse_55" data-name="Ellipse 55" cx="2" cy="2" r="2" transform="translate(14 8)" fill="#fff"/>
+  </g>
+</svg>

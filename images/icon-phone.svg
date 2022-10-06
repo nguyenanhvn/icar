@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="_24x24-phone" data-name="24x24-phone" transform="translate(0.5 0.5)">
+    <path id="boundingbox" d="M0,0H24V24H0Z" fill="#999" stroke="#999" stroke-linecap="square" stroke-width="1" opacity="0"/>
+    <g id="phone" transform="translate(0.5)">
+      <path id="Path_31" data-name="Path 31" d="M18,22l-.061,0A17,17,0,0,1,2,6.061L2,6A3,3,0,0,1,5,3H9.677l2.568,6.419-2.4,1.442a10.082,10.082,0,0,0,3.3,3.3l1.442-2.4L21,14.323V19A3,3,0,0,1,18,22ZM4,5.974A15.015,15.015,0,0,0,18.026,20,1,1,0,0,0,19,19V15.677l-3.581-1.432L13.884,16.8l-.826-.407A12.064,12.064,0,0,1,7.6,10.942L7.2,10.116,9.755,8.581,8.323,5H5a1,1,0,0,0-1,.974Z" fill="#999"/>
+    </g>
+  </g>
+</svg>
