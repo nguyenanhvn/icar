@@ -1220,6 +1220,28 @@ img {
      object-position: center;
 }
 
+.banner .owl-item.active .child .child--box .child--title {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.banner .owl-item.active .child .child--box .child--text {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
 .banner .child {
   position: relative;
 }
