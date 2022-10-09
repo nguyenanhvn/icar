@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="_24x24-copy" data-name="24x24-copy" transform="translate(0.5 0.5)">
+    <path id="boundingbox" d="M0,0H24V24H0Z" fill="#f15a29" stroke="#010001" stroke-linecap="square" stroke-width="1" opacity="0"/>
+    <g id="copy">
+      <rect id="Rectangle_5793" data-name="Rectangle 5793" width="12" height="12" rx="2" transform="translate(8 8)" fill="none" stroke="#010001" stroke-linecap="square" stroke-width="2"/>
+      <path id="Path_46065" data-name="Path 46065" d="M16,8V6a2,2,0,0,0-2-2H6A2,2,0,0,0,4,6v8a2,2,0,0,0,2,2H8" fill="none" stroke="#010001" stroke-linecap="square" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

@@ -433,44 +433,187 @@
 
     <!-- Main -->
     <div class="main">
-        <div class="search">
-            <div class="search-bg"></div>
-            <div class="container conn_relative">
+        <!-- Policy -->
+        <div class="policy">
+            <div class="container">
                 <div class="box">
-                    <div class="box-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
-                            <g transform="translate(0.5 0.5)">
-                              <path fill="#fff" stroke="#707070" stroke-linecap="square" stroke-width="1" opacity="0"/>
-                              <g>
-                                <circle cx="7" cy="7" r="7" transform="translate(3 3)" fill="none" stroke="#010001" stroke-linecap="square" stroke-linejoin="round" stroke-width="2"/>
-                                <line x1="6" y1="6" transform="translate(15 15)" fill="none" stroke="#010001" stroke-linecap="square" stroke-linejoin="round" stroke-width="2"/>
-                              </g>
-                            </g>
-                        </svg>
-                        <input type="text" placeholder="Tìm kiếm ..." value="abc">
+                    <div class="box-menus">
+                        <ul>
+                            <li class="current_page_item">
+                                <a href="#">Chính sách & Quy định chung</a>
+                            </li>
+                            <li>
+                                <a href="#">Đổi trả & hoàn tiền</a>
+                            </li>
+                            <li>
+                                <a href="#">Vận chuyển, giao nhận</a>
+                            </li>
+                            <li>
+                                <a href="#">Chính sách bảo hành</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="box-result">
-                        <div class="result--empty text-center">
-                            <div class="empty--icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41">
-                                    <g transform="translate(0.5 0.5)">
-                                        <path d="M0,0H40V40H0Z" fill="#fff" stroke="#999" stroke-linecap="square" stroke-width="1" opacity="0"/>
-                                        <g transform="translate(5 5)">
-                                            <circle cx="11.667" cy="11.667" r="11.667" fill="none" stroke="#999" stroke-linecap="square" stroke-linejoin="round" stroke-width="2"/>
-                                            <line data-name="Line 7" x1="10" y1="10" transform="translate(20 20)" fill="none" stroke="#999" stroke-linecap="square" stroke-linejoin="round" stroke-width="2"/>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="empty--text">
-                                <strong>Không có kết quả phù hợp</strong>
-                                <span>Vui lòng thử lại hoặc thay đổi từ khóa tìm kiếm</span>
+                    <div class="box-content">
+                        <h2 class="content--heading">Chính sách & Quy định chung</h2>
+                        <div class="content--paragraph">
+                            <p>Chúng tôi cam kết hoạt động kinh doanh tuân thủ theo đúng Pháp luật của Nhà nước Việt Nam và vì quyền lợi của người tiêu dùng. Để đảm bảo quyền lợi, Quý khách hàng vui lòng đọc kỹ những chính sách dưới đây:</p>
+
+                            <p>Với mục tiêu phát triển không ngừng các dịch vụ cung cấp hàng hóa nhằm tạo điều kiện thuận lợi nhất cho khách hàng. Chúng tôi luôn phấn đấu vì mục tiêu “mang sản phẩm đến tận nhà” cho cả khách mua buôn và khách mua lẻ trên mọi miền tổ quốc với dịch vụ chuyển phát nhanh từ 1-3 ngày làm việc cùng các hình thức thanh toán đa dạng như sau:</p>
+
+                            <h3>Thanh toán trước (chuyển khoản)</h3>
+
+                            <p>Khách hàng trả tiền trước, lấy hàng sau bằng cách chuyển khoản. Đối với các khách hàng ở xa có nhu cầu mua buôn, mua lẻ vui lòng tham khảo các tài khoản thanh toán nào phù hợp nhất cho mình dưới đây.</p>
+
+                            <p>Trước khi chuyển khoản khách hàng vui lòng gọi <b>Hotline</b> <a href="tel: 086.8899.492">086.8899.492</a> <b>hoặc</b> <a href="tel: 097.6056.016">097.6056.016</a> để xác thực tình trạng của sản phẩm cũng như các thỏa thuận khác, đồng thời xác nhận tình trạng còn hàng hay hết hàng. Khi chuyển khoản vui lòng ghi gõ tên người chuyển và nội dung chuyển tiền.</p>
+                            
+                            <div class="banks">
+                                <div class="bank--title">
+                                    <span>Khách hàng chuyển khoản vui lòng ghi rõ nội dung theo cú pháp</span>
+                                    <strong>&lt;SDT Khách hàng&gt; &lt;Mã đơn hàng&gt;</strong>
+                                </div>
+                                <ul class="bank--list">
+                                    <li>
+                                        <div class="qr">
+                                            <img src="images/qr.png" alt="">
+                                        </div>
+                                        <table class="table">
+                                            <tr>
+                                                <tr>
+                                                    <td>Tên Ngân hàng</td>
+                                                    <td>
+                                                        <div class="copy conn_flex-cleft" onclick="copy('Techcombank')">
+                                                            <img src="images/icon-copy.svg" alt="">
+                                                            <strong>Techcombank</strong>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Chi nhánh</td>
+                                                    <td>
+                                                        <div class="copy conn_flex-cleft" onclick="copy('Chi nhánh hội sở')">
+                                                            <img src="images/icon-copy.svg" alt="">
+                                                            <strong>Chi nhánh hội sở</strong>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Số tài khoản</td>
+                                                    <td>
+                                                        <div class="copy conn_flex-cleft" onclick="copy('19028235319015')">
+                                                            <img src="images/icon-copy.svg" alt="">
+                                                            <strong>19028235319015</strong>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tên tài khoản</td>
+                                                    <td>
+                                                        <div class="copy conn_flex-cleft" onclick="copy('Trần Quốc Thắng')">
+                                                            <img src="images/icon-copy.svg" alt="">
+                                                            <strong>Trần Quốc Thắng</strong>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tr>
+                                        </table>
+                                    </li>
+                                    <li>
+                                        <div class="qr">
+                                            <img src="images/qr.png" alt="">
+                                        </div>
+                                        <table class="table">
+                                            <tr>
+                                                <tr>
+                                                    <td>Tên Ngân hàng</td>
+                                                    <td>
+                                                        <div class="copy conn_flex-cleft" onclick="copy('Techcombank')">
+                                                            <img src="images/icon-copy.svg" alt="">
+                                                            <strong>Techcombank</strong>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Chi nhánh</td>
+                                                    <td>
+                                                        <div class="copy conn_flex-cleft" onclick="copy('Chi nhánh hội sở')">
+                                                            <img src="images/icon-copy.svg" alt="">
+                                                            <strong>Chi nhánh hội sở</strong>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Số tài khoản</td>
+                                                    <td>
+                                                        <div class="copy conn_flex-cleft" onclick="copy('19028235319015')">
+                                                            <img src="images/icon-copy.svg" alt="">
+                                                            <strong>19028235319015</strong>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tên tài khoản</td>
+                                                    <td>
+                                                        <div class="copy conn_flex-cleft" onclick="copy('Trần Quốc Thắng')">
+                                                            <img src="images/icon-copy.svg" alt="">
+                                                            <strong>Trần Quốc Thắng</strong>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tr>
+                                        </table>
+                                    </li>
+                                    <li>
+                                        <div class="qr">
+                                            <img src="images/qr.png" alt="">
+                                        </div>
+                                        <table class="table">
+                                            <tr>
+                                                <tr>
+                                                    <td>Tên Ngân hàng</td>
+                                                    <td>
+                                                        <div class="copy conn_flex-cleft" onclick="copy('Techcombank')">
+                                                            <img src="images/icon-copy.svg" alt="">
+                                                            <strong>Techcombank</strong>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Chi nhánh</td>
+                                                    <td>
+                                                        <div class="copy conn_flex-cleft" onclick="copy('Chi nhánh hội sở')">
+                                                            <img src="images/icon-copy.svg" alt="">
+                                                            <strong>Chi nhánh hội sở</strong>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Số tài khoản</td>
+                                                    <td>
+                                                        <div class="copy conn_flex-cleft" onclick="copy('19028235319015')">
+                                                            <img src="images/icon-copy.svg" alt="">
+                                                            <strong>19028235319015</strong>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tên tài khoản</td>
+                                                    <td>
+                                                        <div class="copy conn_flex-cleft" onclick="copy('Trần Quốc Thắng')">
+                                                            <img src="images/icon-copy.svg" alt="">
+                                                            <strong>Trần Quốc Thắng</strong>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tr>
+                                        </table>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> <!-- /Policy -->
     </div> <!-- /Main -->
 
     <footer class="footer">

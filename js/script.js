@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {    
+// Dropdown Header
     jQuery(document).on('click', '.header .header-top .top--left .actions li', function(){
         jQuery('.header .header-top .top--left .actions li').removeClass('active');
         jQuery(this).toggleClass('active');
@@ -17,6 +18,8 @@ jQuery(document).ready(function($) {
     jQuery(document).on('click', '.middle--right a', function(e){
         e.stopPropagation()
     });
+
+// Slider
     if (jQuery('.banner').length > 0) {
         jQuery('.banner').owlCarousel({
             loop: true,
@@ -92,6 +95,7 @@ jQuery(document).ready(function($) {
         });
     } 
 
+// Grid 3 Dai Ly
     jQuery(document).on('mouseover', '.hgrid3 .content_items .item', function() {
         var index = jQuery(this).index();
         if(!jQuery(this).hasClass('active')){
@@ -110,6 +114,7 @@ jQuery(document).ready(function($) {
         }
     });
 
+// Upgrade
     jQuery(document).on('mouseover', '.upgrade ul li', function() {
         var index = jQuery(this).index() + 1;
         if(!jQuery(this).parent().parent().hasClass('content-left')){
@@ -127,6 +132,7 @@ jQuery(document).ready(function($) {
         jQuery(this).removeClass('active');
     });
 
+// Search Header
     jQuery(document).on('click', '.action--search .search--show', function(e){
         e.stopPropagation();
         jQuery(this).closest('.header-bottom').addClass('searched');
@@ -141,4 +147,153 @@ jQuery(document).ready(function($) {
     jQuery(document).on('click', 'html, body', function(e){
         jQuery('.header-bottom').removeClass('searched');
     });
+    
+    jQuery(document).on('click', '.action--hambuger', function(e){
+        jQuery(this).toggleClass('open');
+        jQuery('.menu-responsive').toggleClass('open');
+        jQuery('body').toggleClass('none-scroll');
+    });
+    jQuery(document).on('click', '.menu-responsive .menu-item-has-children span', function(){
+        jQuery('.menu2-responsive .menu--top span').html(jQuery(this).text());
+        jQuery('.menu2-responsive .menu--box').html(jQuery(this).parent().find('.sub-menu').html());
+        jQuery('.menu2-responsive').addClass('open');
+    });
+    jQuery(document).on('click', '.menu2-responsive .menu--close', function(){
+        jQuery('.menu2-responsive').removeClass('open');
+        jQuery('.menu-responsive').removeClass('open');
+        jQuery('.action--hambuger').removeClass('open');
+    });
+    jQuery(document).on('click', '.menu2-responsive .menu--back', function(){
+        jQuery('.menu2-responsive').removeClass('open');
+    });
+
+    jQuery(document).on('click', '.dropdown .dropdown--current', function(){
+        var index = jQuery(this).closest('.dropdown').index();
+        for (let i = 0; i < jQuery('.dropdown').length; i++) {
+            if (i != index){
+                jQuery('.dropdown--options').eq(i).addClass('select-hide');
+                jQuery('.dropdown').eq(i).removeClass('active');
+            }            
+        }        
+        jQuery(this).parent().find('.dropdown--options').toggleClass('select-hide');
+        jQuery(this).parent().toggleClass('active');
+    });
+
+    jQuery(document).on('change', '.dropdown .dropdown--checkboxes input', function(){
+        var count = jQuery(this).closest('.dropdown--checkboxes').find('input:checked').length;
+        if (jQuery(this).val() == 'Tất cả' && jQuery(this).prop('checked')) {
+            jQuery(this).closest('.dropdown--checkboxes').find('input').prop('checked', true);
+            jQuery(this).closest('.dropdown').find('.dropdown--current span').text('Tất cả');
+        } else if (jQuery(this).val() == 'Tất cả' && !jQuery(this).prop('checked')) {
+            jQuery(this).closest('.dropdown--checkboxes').find('input').prop('checked', false);
+            jQuery(this).closest('.dropdown').find('.dropdown--current span').text(0 + ' lựa chọn');
+        } else {            
+            if(jQuery(this).closest('.dropdown--checkboxes').find('input[value="Tất cả"]:checked')){
+                jQuery(this).closest('.dropdown--checkboxes').find('input[value="Tất cả"]').prop('checked', false);
+            };
+            jQuery(this).closest('.dropdown').find('.dropdown--current span').text(count + ' lựa chọn');
+        }
+    });
+    
+    //search
+    jQuery(document).on('input', '.dropdown--search input', function(){
+        jQuery(this).closest('.dropdown').find('.dropdown--checkboxes ul li').removeClass('active').removeClass('show').hide();
+        jQuery(this).closest('.dropdown').find('.dropdown--values ul li').removeClass('active').removeClass('show').hide();
+        var value = jQuery(this).val();
+        if(value != '') {
+            jQuery(this).closest('.dropdown').find(".dropdown--checkboxes ul li label:contains("+value+")").parent().addClass('show').show();
+            jQuery(this).closest('.dropdown').find(".dropdown--values ul li:contains("+value+")").addClass('show').show();
+        } else {
+            jQuery(this).closest('.dropdown').find(".dropdown--checkboxes ul li").addClass('show').show();
+            jQuery(this).closest('.dropdown').find(".dropdown--values ul li").addClass('show').show();
+        }
+        // jQuery(".list-city ul li.show:eq(0)").addClass('active');
+    });
+    jQuery(document).on('click', '.dropdown--search .search--reset', function(){
+        jQuery(this).parent().find('input').val('');
+        jQuery(this).closest('.dropdown').find(".dropdown--checkboxes ul li").addClass('show').show();
+        jQuery(this).closest('.dropdown').find(".dropdown--values ul li").addClass('show').show();
+    });
+
+    jQuery.expr[':'].contains = function(a, i, m) {
+        return jQuery(a).text().toUpperCase()
+            .indexOf(m[3].toUpperCase()) >= 0;
+    };
+
+// Dropdown
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    /* Look for any elements with the class "custom-select": */
+    x = document.getElementsByClassName("dropdown--values");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+        selElmnt = x[i].getElementsByTagName("select")[0];
+        ll = selElmnt.length;
+        /* For each element, create a new DIV that will act as the selected item: */
+        a = document.createElement("span");
+        a.setAttribute("class", "select-selected");
+        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+        // a.innerText = selElmnt.options[selElmnt.selectedIndex].innerText;
+        if(selElmnt.options[selElmnt.selectedIndex].id) {
+            a.id = selElmnt.options[selElmnt.selectedIndex].id;
+        }
+        x[i].parentElement.parentElement.firstElementChild.firstElementChild.appendChild(a);
+        /* For each element, create a new DIV that will contain the option list: */
+        b = document.createElement("ul");
+        b.setAttribute("class", "select-items");
+        for (j = 0; j < ll; j++) {
+            /* For each option in the original select element,
+            create a new DIV that will act as an option item: */
+            c = document.createElement("li");
+            c.innerHTML = selElmnt.options[j].innerHTML;
+            if (selElmnt.options[j].selected){
+                c.setAttribute("class", 'same-as-selected');
+            }
+            if(selElmnt.options[j].id) {
+                c.id = selElmnt.options[j].id;
+            }
+            c.addEventListener("click", function(e) {
+                /* When an item is clicked, update the original select box,
+                and the selected item: */
+                var y, i, k, s, h, sl, yl;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                sl = s.length;
+                h = this.parentNode.previousSibling;
+                for (i = 0; i < sl; i++) {
+                    if (s.options[i].innerHTML == this.innerHTML) {
+                        s.selectedIndex = i;
+                        h.innerHTML = this.innerHTML;
+                        h.id = this.id;
+                        y = this.parentNode.getElementsByClassName("same-as-selected");
+                        yl = y.length;
+                        for (k = 0; k < yl; k++) {
+                        y[k].removeAttribute("class");
+                        }
+                        this.setAttribute("class", "same-as-selected");
+                        break;
+                    }
+                }
+                // h.click();
+                jQuery('.dropdown').removeClass('active');
+                jQuery('.dropdown--options').addClass('select-hide');
+                jQuery(this).closest('.dropdown').find('.dropdown--current span').html(jQuery(this).text());
+            });
+            b.appendChild(c);
+        }
+        x[i].appendChild(b);
+    }
+    jQuery(document).click(function (e){
+        // Đối tượng container chứa popup
+        var container = $(".dropdown");    
+        // Nếu click bên ngoài đối tượng container thì ẩn nó đi
+        if (!container.is(e.target) && container.has(e.target).length === 0){
+            $(".dropdown .dropdown--options").addClass('select-hide');
+            $(".dropdown").removeClass('active');
+        }
+    });
 });
+
+function copy(copyText) {
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText);
+    alert("Đã copy");
+}

@@ -431,46 +431,50 @@
         </div>
     </header> <!-- /Header -->
 
+    <style>
+        body{
+            padding-top: 112px;
+            background: #fff;
+        }
+        @media (max-width: 992px){
+            body{
+                padding-top: 64px;
+            }
+        }
+    </style>
+
     <!-- Main -->
     <div class="main">
-        <div class="search">
-            <div class="search-bg"></div>
-            <div class="container conn_relative">
+        <!-- Branch -->
+        <div class="branch" style="background-image: url(images/bg-map.jpg);">
+            <div class="container">
                 <div class="box">
-                    <div class="box-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
-                            <g transform="translate(0.5 0.5)">
-                              <path fill="#fff" stroke="#707070" stroke-linecap="square" stroke-width="1" opacity="0"/>
-                              <g>
-                                <circle cx="7" cy="7" r="7" transform="translate(3 3)" fill="none" stroke="#010001" stroke-linecap="square" stroke-linejoin="round" stroke-width="2"/>
-                                <line x1="6" y1="6" transform="translate(15 15)" fill="none" stroke="#010001" stroke-linecap="square" stroke-linejoin="round" stroke-width="2"/>
-                              </g>
-                            </g>
-                        </svg>
-                        <input type="text" placeholder="Tìm kiếm ..." value="abc">
-                    </div>
-                    <div class="box-result">
-                        <div class="result--empty text-center">
-                            <div class="empty--icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41">
-                                    <g transform="translate(0.5 0.5)">
-                                        <path d="M0,0H40V40H0Z" fill="#fff" stroke="#999" stroke-linecap="square" stroke-width="1" opacity="0"/>
-                                        <g transform="translate(5 5)">
-                                            <circle cx="11.667" cy="11.667" r="11.667" fill="none" stroke="#999" stroke-linecap="square" stroke-linejoin="round" stroke-width="2"/>
-                                            <line data-name="Line 7" x1="10" y1="10" transform="translate(20 20)" fill="none" stroke="#999" stroke-linecap="square" stroke-linejoin="round" stroke-width="2"/>
-                                        </g>
-                                    </g>
-                                </svg>
+                    <span></span>
+                    <h2 class="conn_sheading conn_white text-center">Tìm kiếm đại lý ICAR Việt Nam</h2>
+                    <div class="conn_text text-center">Chọn khu vực bạn muốn tìm kiếm đại lý phân phối chính thức của ICAR Việt Nam. Danh sách gồm các cơ sở nội thất ô tô, garage, lốp, các dịch vụ chăm sóc xe hơi.</div>
+                    <div class="box-items">
+                        <a href="#" class="item">
+                            <div class="item--img conn_relative">
+                                <img src="images/map1.png" alt="">
                             </div>
-                            <div class="empty--text">
-                                <strong>Không có kết quả phù hợp</strong>
-                                <span>Vui lòng thử lại hoặc thay đổi từ khóa tìm kiếm</span>
+                            <div class="item--name conn_white conn_relative">ICAR Miền Bắc</div>
+                        </a>
+                        <a href="#" class="item">
+                            <div class="item--img conn_relative">
+                                <img src="images/map2.png" alt="">
                             </div>
-                        </div>
+                            <div class="item--name conn_white conn_relative">ICAR Miền Trung</div>
+                        </a>
+                        <a href="#" class="item">
+                            <div class="item--img conn_relative">
+                                <img src="images/map3.png" alt="">
+                            </div>
+                            <div class="item--name conn_white conn_relative">ICAR Miền Nam</div>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> <!-- /branch -->
     </div> <!-- /Main -->
 
     <footer class="footer">

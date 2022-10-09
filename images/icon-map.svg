@@ -1,0 +1,7 @@
+<svg id="_24x24-map-pin" data-name="24x24-map-pin" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <path id="boundingbox" d="M0,0H16V16H0Z" fill="#4c4c4c" opacity="0"/>
+  <g id="map-pin" transform="translate(2.003 1.334)">
+    <path id="Ellipse_56" data-name="Ellipse 56" d="M1.667-1A2.667,2.667,0,1,1-1,1.667,2.67,2.67,0,0,1,1.667-1Zm0,4A1.333,1.333,0,1,0,.333,1.667,1.335,1.335,0,0,0,1.667,3Z" transform="translate(4.331 4.333)" fill="#4c4c4c"/>
+    <path id="Path_46062" data-name="Path 46062" d="M9,15.657a1.987,1.987,0,0,1-1.413-.585l-2.83-2.829a6,6,0,1,1,8.485,0l-2.829,2.829A1.987,1.987,0,0,1,9,15.657ZM9,3.334A4.667,4.667,0,0,0,5.7,11.3l2.829,2.829a.667.667,0,0,0,.942,0L12.3,11.3A4.667,4.667,0,0,0,9,3.334Z" transform="translate(-3.004 -2)" fill="#4c4c4c"/>
+  </g>
+</svg>

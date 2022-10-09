@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+  <g id="_24x24-chevron-down" data-name="24x24-chevron-down" transform="translate(1 1)">
+    <path id="boundingbox" d="M0,0H24V24H0Z" fill="#f15a29" stroke="#4c4c4c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0"/>
+    <path id="chevron-down" d="M6,9l6,6,6-6" fill="none" stroke="#4c4c4c" stroke-linecap="square" stroke-width="2"/>
+  </g>
+</svg>
