@@ -1,0 +1,8 @@
+<svg id="_24x24-cam" data-name="24x24-cam" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <path id="boundingbox" d="M0,0H80V80H0Z" fill="#e5e5e5" opacity="0"/>
+  <g id="cam" transform="translate(13.333 6.667)">
+    <path id="Ellipse_24" data-name="Ellipse 24" d="M25.667-1A26.667,26.667,0,1,1-1,25.667,26.7,26.7,0,0,1,25.667-1Zm0,46.667a20,20,0,1,0-20-20A20.023,20.023,0,0,0,25.667,45.667Z" transform="translate(1 1)" fill="#e5e5e5"/>
+    <path id="Ellipse_25" data-name="Ellipse 25" d="M12.333-1A13.333,13.333,0,1,1-1,12.333,13.348,13.348,0,0,1,12.333-1Zm0,20a6.667,6.667,0,1,0-6.667-6.667A6.674,6.674,0,0,0,12.333,19Z" transform="translate(14.333 14.333)" fill="#e5e5e5"/>
+    <path id="Path_19797" data-name="Path 19797" d="M46.326,38.334H11.43A6.667,6.667,0,0,1,5.714,28.24l6.971-11.621A3.333,3.333,0,1,1,18.4,20.048l-6.97,11.62H46.323L39.351,20.048a3.333,3.333,0,1,1,5.717-3.429l6.97,11.62a6.667,6.667,0,0,1-5.713,10.095Z" transform="translate(-2.21 28.333)" fill="#e5e5e5"/>
+  </g>
+</svg>

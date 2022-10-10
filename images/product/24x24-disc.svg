@@ -1,0 +1,9 @@
+<svg id="_24x24-disc" data-name="24x24-disc" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <path id="boundingbox" d="M0,0H80V80H0Z" fill="#e5e5e5" opacity="0"/>
+  <g id="disc" transform="translate(6.667 6.667)">
+    <path id="Ellipse_19" data-name="Ellipse 19" d="M32.333-1A33.333,33.333,0,1,1-1,32.333,33.371,33.371,0,0,1,32.333-1Zm0,60A26.667,26.667,0,1,0,5.667,32.333,26.7,26.7,0,0,0,32.333,59Z" transform="translate(1 1)" fill="#e5e5e5"/>
+    <path id="Ellipse_20" data-name="Ellipse 20" d="M5.667-1A6.667,6.667,0,1,1-1,5.667,6.674,6.674,0,0,1,5.667-1Z" transform="translate(27.667 27.667)" fill="#e5e5e5"/>
+    <path id="Path_19787" data-name="Path 19787" d="M12.667,26H6A20,20,0,0,1,26,6v6.667A13.333,13.333,0,0,0,12.667,26Z" transform="translate(7.333 7.333)" fill="#e5e5e5"/>
+    <path id="Path_19788" data-name="Path 19788" d="M12,32V25.333A13.348,13.348,0,0,0,25.333,12H32A20.023,20.023,0,0,1,12,32Z" transform="translate(21.333 21.333)" fill="#e5e5e5"/>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="73" height="73" viewBox="0 0 73 73">
+  <g id="Group_18876" data-name="Group 18876" transform="translate(0.5 0.5)">
+    <path id="Path_46100" data-name="Path 46100" d="M0,0H72V72H0Z" fill="#f15a29" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+    <g id="icar-logomark" transform="translate(12 12)">
+      <rect id="boundingbox" width="48" height="48" fill="#fff" opacity="0"/>
+      <path id="logomark" d="M27.006,34.569,30.615,0a17.379,17.379,0,0,1-1.772,34.667A17.563,17.563,0,0,1,27.006,34.569ZM15.626,1.506A17.139,17.139,0,0,1,26.3,17.524,17.147,17.147,0,0,1,12.227,34.055ZM3.156,2.886A16.752,16.752,0,0,1,11.467,17.52,16.851,16.851,0,0,1,0,33.135Z" transform="translate(0.889 6.667)" fill="#fff" stroke="rgba(0,0,0,0)" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

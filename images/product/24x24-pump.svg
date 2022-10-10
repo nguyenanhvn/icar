@@ -1,0 +1,9 @@
+<svg id="_24x24-pump" data-name="24x24-pump" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <path id="boundingbox" d="M0,0H80V80H0Z" fill="#e5e5e5" opacity="0"/>
+  <g id="pump" transform="translate(6.667 6.667)">
+    <path id="Ellipse_22" data-name="Ellipse 22" d="M32.333-1A33.333,33.333,0,1,1-1,32.333,33.371,33.371,0,0,1,32.333-1Zm0,60A26.667,26.667,0,1,0,5.667,32.333,26.7,26.7,0,0,0,32.333,59Z" transform="translate(1 1)" fill="#e5e5e5"/>
+    <path id="Ellipse_23" data-name="Ellipse 23" d="M5.667-1A6.667,6.667,0,1,1-1,5.667,6.674,6.674,0,0,1,5.667-1Z" transform="translate(27.667 27.667)" fill="#e5e5e5"/>
+    <path id="Line_40" data-name="Line 40" d="M3.3,16.647l-4.714-4.714L11.933-1.414,16.647,3.3Z" transform="translate(34.734 16.7)" fill="#e5e5e5"/>
+    <path id="Path_19795" data-name="Path 19795" d="M12.667,29.333H6V26A20,20,0,0,1,26,6h3.333v6.667H26A13.333,13.333,0,0,0,12.667,26Z" transform="translate(7.333 7.333)" fill="#e5e5e5"/>
+  </g>
+</svg>

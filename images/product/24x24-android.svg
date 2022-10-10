@@ -1,0 +1,12 @@
+<svg id="_24x24-android" data-name="24x24-android" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <path id="boundingbox" d="M0,0H80V80H0Z" fill="#e5e5e5" opacity="0"/>
+  <g id="android" transform="translate(10 5.195)">
+    <path id="Line_55" data-name="Line 55" d="M5.667,25.667H-1V-1H5.667Z" transform="translate(1 25.805)" fill="#e5e5e5"/>
+    <path id="Line_56" data-name="Line 56" d="M5.667,25.667H-1V-1H5.667Z" transform="translate(54.333 25.805)" fill="#e5e5e5"/>
+    <path id="Path_19802" data-name="Path 19802" d="M39.333,56.333H12.667A6.674,6.674,0,0,1,6,49.667V23a20,20,0,0,1,40,0V49.667A6.674,6.674,0,0,1,39.333,56.333Zm-26.667-30V49.667H39.333V26.333Zm.422-6.667H38.912a13.335,13.335,0,0,0-25.823,0Z" transform="translate(4 1.805)" fill="#e5e5e5"/>
+    <path id="Line_57" data-name="Line 57" d="M4.973,14.269-1.342,1.64,4.621-1.342l6.315,12.629Z" transform="translate(13.536 1.342)" fill="#e5e5e5"/>
+    <path id="Line_58" data-name="Line 58" d="M4.621,14.269l-5.963-2.981L4.973-1.342,10.936,1.64Z" transform="translate(36.87 1.342)" fill="#e5e5e5"/>
+    <path id="Line_59" data-name="Line 59" d="M5.667,15.667H-1V-1H5.667Z" transform="translate(17.667 52.472)" fill="#e5e5e5"/>
+    <path id="Line_60" data-name="Line 60" d="M5.667,15.667H-1V-1H5.667Z" transform="translate(37.667 52.472)" fill="#e5e5e5"/>
+  </g>
+</svg>
