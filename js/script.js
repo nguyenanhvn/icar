@@ -31,6 +31,8 @@ jQuery(document).ready(function($) {
                 '<div class="nav__prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="#fff" opacity="0"/><g id="arrow-left"><path d="M16132.414,1882.83h0l-1.414-1.414,1.414-1.414,6-6,1.415,1.414-5,5h11.585v2h-11.588l5,5-1.415,1.414Z" transform="translate(-16127.414 -1869.414)" fill="#010001"/></g></svg></div>',
                 '<div class="nav__next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="#fff" opacity="0"/><g id="arrow-right"><path d="M16097.588,1887.414l5-5H16091v-2h11.589l-5-5L16099,1874l6,6,1.414,1.415-7.417,7.413Z" transform="translate(-16086 -1869.414)" fill="#010001"/></g></svg></div>'
             ],
+            animateOut: 'slideInLeft',
+            // animateIn: 'slideInLeft',
         });
     } 
     if (jQuery('.slider-review').length > 0) {
@@ -93,7 +95,40 @@ jQuery(document).ready(function($) {
                 }
             },
         });
-    } 
+    }
+
+// Filter Listing
+    jQuery(document).on('click', '.box-filter .filter--sort', function() {
+        jQuery(this).closest('.container').toggleClass('filter-active');
+        if(jQuery(this).closest('.container').hasClass('filter-active')){
+            jQuery(this).find('span').text(jQuery(this).attr('text-hide'));
+        } else {
+            jQuery(this).find('span').text(jQuery(this).attr('text-show'));
+        }
+    });
+    jQuery(document).on('click', '.box-mfilter .mfilter--sort', function() {
+        jQuery(this).closest('.container').addClass('filter-active');
+    });
+    jQuery(document).on('click', '.sort--head .sort--close', function() {
+        jQuery(this).closest('.container').removeClass('filter-active');
+    });
+
+    jQuery(document).on('click', '.box-mfilter .mfilter--by', function() {
+        jQuery(this).closest('.box-mfilter').find('.mfilter--by').addClass('by-active');
+    });
+    jQuery(document).on('click', '.by--head .by--close', function() {
+        jQuery(this).closest('.box-mfilter').find('.mfilter--by').removeClass('by-active');
+    });
+    
+    jQuery(document).on('click', '.hproducts .box-sort .child .child--title', function() {
+        if(jQuery(this).parent().hasClass('active')){
+            jQuery(this).parent().find('.child--box').slideUp(200);
+            jQuery(this).parent().removeClass('active');
+        } else {
+            jQuery(this).parent().find('.child--box').slideDown(200);
+            jQuery(this).parent().addClass('active');
+        }
+    });
 
 // Grid 3 Dai Ly
     jQuery(document).on('mouseover', '.hgrid3 .content_items .item', function() {
@@ -102,16 +137,12 @@ jQuery(document).ready(function($) {
             jQuery('.hgrid3 .content_items .item').removeClass('active');
             jQuery(this).closest('.hgrid3').attr('data-item', index + 1);
             jQuery(this).addClass('active');
-        }
-        if(jQuery(window).width() > 1200){            
-            jQuery(this).find('.item_table').slideDown(500);
-        }
+        }        
+        jQuery(this).find('.item_table').slideDown(500);
     });
     jQuery(document).on('mouseleave', '.hgrid3 .content_items .item', function() {
         jQuery(this).closest('.hgrid3').attr('data-item', 0);
-        if(jQuery(window).width() > 1200){            
-            jQuery(this).find('.item_table').slideUp(500);
-        }
+        jQuery(this).find('.item_table').slideUp(500);
     });
 
 // Upgrade
@@ -148,6 +179,7 @@ jQuery(document).ready(function($) {
         jQuery('.header-bottom').removeClass('searched');
     });
     
+// Header Mobile
     jQuery(document).on('click', '.action--hambuger', function(e){
         jQuery(this).toggleClass('open');
         jQuery('.menu-responsive').toggleClass('open');
@@ -156,6 +188,11 @@ jQuery(document).ready(function($) {
     jQuery(document).on('click', '.menu-responsive .menu-item-has-children span', function(){
         jQuery('.menu2-responsive .menu--top span').html(jQuery(this).text());
         jQuery('.menu2-responsive .menu--box').html(jQuery(this).parent().find('.sub-menu').html());
+        jQuery('.menu2-responsive').addClass('open');
+    });
+    jQuery(document).on('click', '.menu-responsive .has--child', function(){
+        jQuery('.menu2-responsive .menu--top span').html(jQuery(this).attr('text'));
+        jQuery('.menu2-responsive .menu--box').html(jQuery(this).find('.li--area').html());
         jQuery('.menu2-responsive').addClass('open');
     });
     jQuery(document).on('click', '.menu2-responsive .menu--close', function(){
@@ -195,7 +232,7 @@ jQuery(document).ready(function($) {
         }
     });
     
-    //search
+//search
     jQuery(document).on('input', '.dropdown--search input', function(){
         jQuery(this).closest('.dropdown').find('.dropdown--checkboxes ul li').removeClass('active').removeClass('show').hide();
         jQuery(this).closest('.dropdown').find('.dropdown--values ul li').removeClass('active').removeClass('show').hide();
@@ -290,6 +327,65 @@ jQuery(document).ready(function($) {
             $(".dropdown").removeClass('active');
         }
     });
+    
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    /* Look for any elements with the class "custom-select": */
+    x = document.getElementsByClassName("dropdown--by");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+        selElmnt = x[i].getElementsByTagName("select")[0];
+        ll = selElmnt.length;
+        /* For each element, create a new DIV that will act as the selected item: */
+        // a = document.createElement("span");
+        // a.setAttribute("class", "select-selected");
+        // a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+        // a.innerText = selElmnt.options[selElmnt.selectedIndex].innerText;
+        // if(selElmnt.options[selElmnt.selectedIndex].id) {
+        //     a.id = selElmnt.options[selElmnt.selectedIndex].id;
+        // }
+        // x[i].parentElement.parentElement.firstElementChild.firstElementChild.appendChild(a);
+        /* For each element, create a new DIV that will contain the option list: */
+        b = document.createElement("ul");
+        b.setAttribute("class", "select-items");
+        for (j = 0; j < ll; j++) {
+            /* For each option in the original select element,
+            create a new DIV that will act as an option item: */
+            c = document.createElement("li");
+            c.innerHTML = selElmnt.options[j].innerHTML;
+            if (selElmnt.options[j].selected){
+                c.setAttribute("class", 'same-as-selected');
+            }
+            if(selElmnt.options[j].id) {
+                c.id = selElmnt.options[j].id;
+            }
+            c.addEventListener("click", function(e) {
+                /* When an item is clicked, update the original select box,
+                and the selected item: */
+                var y, i, k, s, h, sl, yl;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                sl = s.length;
+                h = this.parentNode.previousSibling;
+                for (i = 0; i < sl; i++) {
+                    if (s.options[i].innerHTML == this.innerHTML) {
+                        s.selectedIndex = i;
+                        h.innerHTML = this.innerHTML;
+                        h.id = this.id;
+                        y = this.parentNode.getElementsByClassName("same-as-selected");
+                        yl = y.length;
+                        for (k = 0; k < yl; k++) {
+                        y[k].removeAttribute("class");
+                        }
+                        this.setAttribute("class", "same-as-selected");
+                        break;
+                    }
+                }
+                // h.click();
+                jQuery('.mfilter--by').removeClass('by-active');
+            });
+            b.appendChild(c);
+        }
+        x[i].appendChild(b);
+    }
 });
 
 function copy(copyText) {

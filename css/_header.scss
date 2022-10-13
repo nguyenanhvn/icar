@@ -492,6 +492,7 @@
     -webkit-backdrop-filter: blur(10px);
     z-index: 10;
     display: none;
+    border-bottom: 1px solid #ccc;
     @media (max-width: 992px){
         display: block;
     }
@@ -561,7 +562,7 @@
             }
             &.open{
                 span{
-                    top: 31px;
+                    top: 30px;
                     transform: rotate(-45deg);
                     + span{
                         top: auto;
@@ -610,7 +611,7 @@
         visibility: visible;
     }
     .menu-box{
-        max-height: calc(100vh - 124px);
+        max-height: calc(100vh - 130px);
         overflow: auto;
         .box--main{
             ul{
@@ -642,6 +643,7 @@
                         line-height: 1.2;
                         font-weight: bold;
                         color: #000;
+                        pointer-events: auto;
                     }
                     .sub-menu{
                         display: none;
@@ -667,9 +669,15 @@
                     svg{
                         margin-right: 8px;                        
                     }
-                    a{
+                    .li--box{
                         color: #999999;
                         font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        .li--area{
+                            display: none;
+                        }
                     }
                 }
             }
@@ -718,6 +726,10 @@
         .top--box{
             width: 64px;
             text-align: center;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             svg{
                 pointer-events: none;
             }
@@ -732,7 +744,7 @@
             padding: 0;
         }
         .sub-box{
-            height: calc(100vh - 124px);
+            height: calc(100vh - 130px);
             overflow: auto;            
             .sub-list{
                 padding: 25px 32px;
@@ -801,6 +813,76 @@
                 display: none;
             }
         }
+        .dropdown--list{
+            padding: 25px 32px;
+            display: grid;
+            grid-gap: 32px;
+            .child{
+                .child--title{
+                    font: normal normal 600 16px/20px SVN-Circular;
+                    color: #4C4C4C;
+                }
+                .child--items{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-gap: 16px;
+                    margin-top: 16px;
+                    .item{
+                        display: grid;
+                        grid-template-columns: 56px 1fr 56px;
+                        grid-gap: 16px;
+                        justify-content: center;
+                        align-items: center;
+                        &:hover {
+                            .item--icon{
+                                img{
+                                    transform: scale(0.8);
+                                }
+                            }
+                            .item--text{
+                                color: $color;
+                            }
+                        }
+                        .item--icon{
+                            width: 100%;
+                            height: 56px;
+                            background: #F1F1F1;
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            &:before{
+                                content: '';
+                                width: 4px;
+                                height: 4px;
+                                background: $color;
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                            }
+                            img{
+                                max-width: 40px;
+                                max-height: 40px;
+                                object-fit: cover;
+                                @include transition;
+                            }
+                        }
+                        .item--caption{
+                            font: normal normal normal 16px/24px SVN-Circular;
+                            color: #010001;
+                            @include transition;
+                            strong{
+                                display: block;
+                            }
+                        }
+                        .item--live{
+                            grid-template-columns: repeat(2, minmax(1px, 1fr));
+                            grid-gap: 8px;
+                        }
+                    }
+                }
+            }
+        }
         .sub-more{
             a{
                 display: block;
@@ -810,7 +892,11 @@
                 font-weight: bold;
                 color: $color;
                 border-top: 1px solid #ddd;
-                svg{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                svg,
+                img{
                     margin-right: 8px;
                 }
             }
