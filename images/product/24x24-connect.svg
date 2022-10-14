@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+  <g id="_24x24-connect" data-name="24x24-connect" transform="translate(1 1)">
+    <path id="boundingbox" d="M0,0H64V64H0Z" fill="#f15a29" stroke="#010001" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0"/>
+    <g id="connect" transform="translate(7.983 13.143)">
+      <path id="Line_81" data-name="Line 81" d="M1.667,4.36A2.667,2.667,0,0,1-1,1.693V1.667a2.667,2.667,0,0,1,5.333,0v.027A2.667,2.667,0,0,1,1.667,4.36Z" transform="translate(22.35 17.19)" fill="#010001"/>
+      <path id="Path_45856" data-name="Path 45856" d="M17.186,30.383l-3.772-3.771L15.3,24.726a8.01,8.01,0,0,0,0-11.312l-1.885-1.886,3.772-3.771,1.885,1.886a13.349,13.349,0,0,1,0,18.853Z" transform="translate(14.373 -0.214)" fill="#010001"/>
+      <path id="Path_45857" data-name="Path 45857" d="M20.014,42.642l-3.771-3.771,1.886-1.886a18.667,18.667,0,0,0,0-26.4L16.243,8.7l3.771-3.771L21.9,6.814a24,24,0,0,1,0,33.942Z" transform="translate(19.088 -4.929)" fill="#010001"/>
+      <path id="Path_45858" data-name="Path 45858" d="M12.782,30.383,10.9,28.5a13.349,13.349,0,0,1,0-18.853l1.885-1.886,3.772,3.771-1.885,1.886a8.01,8.01,0,0,0,0,11.312l1.885,1.886Z" transform="translate(3.682 -0.214)" fill="#010001"/>
+      <path id="Path_45859" data-name="Path 45859" d="M11.909,42.642l-1.886-1.886a24,24,0,0,1,0-33.942l1.886-1.886L15.68,8.7l-1.886,1.886a18.667,18.667,0,0,0,0,26.4l1.886,1.886Z" transform="translate(-2.994 -4.929)" fill="#010001"/>
+    </g>
+  </g>
+</svg>

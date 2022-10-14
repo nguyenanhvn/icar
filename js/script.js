@@ -96,6 +96,49 @@ jQuery(document).ready(function($) {
             },
         });
     }
+    var tslider = jQuery('.thumbs--slider');
+    if (tslider.length> 0){
+        tslider.owlCarousel({
+            loop: true,
+            nav: true,
+            autoplay: true,
+            dots: false,
+            items: 1,
+            navText: [
+                '<div class="nav__prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="#fff" opacity="0"/><g><path d="M16132.414,1882.83h0l-1.414-1.414,1.414-1.414,6-6,1.415,1.414-5,5h11.585v2h-11.588l5,5-1.415,1.414Z" transform="translate(-16127.414 -1869.414)" fill="#fff"/></g></svg></div>',
+                '<div class="nav__next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="#fff" opacity="0"/><g><path d="M16097.588,1887.414l5-5H16091v-2h11.589l-5-5L16099,1874l6,6,1.414,1.415-7.417,7.413Z" transform="translate(-16086 -1869.414)" fill="#fff"/></g></svg></div>'
+            ],
+        });
+        jQuery(document).on('click', '.thumbs--list li', function(){
+            var index = jQuery(this).index();
+            tslider.data('owl.carousel').to(index, 300, true);
+        });
+    }
+    
+    if (jQuery('.snews .box-slider').length > 0) {
+        jQuery('.snews .box-slider').owlCarousel({
+            loop: true,
+            nav: true,
+            autoplay: true,
+            dots: true,
+            margin: 24,
+            navText: [
+                '<div class="nav__prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="#fff" opacity="0"/><g id="arrow-left"><path d="M16132.414,1882.83h0l-1.414-1.414,1.414-1.414,6-6,1.415,1.414-5,5h11.585v2h-11.588l5,5-1.415,1.414Z" transform="translate(-16127.414 -1869.414)" fill="#010001"/></g></svg></div>',
+                '<div class="nav__next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="#fff" opacity="0"/><g id="arrow-right"><path d="M16097.588,1887.414l5-5H16091v-2h11.589l-5-5L16099,1874l6,6,1.414,1.415-7.417,7.413Z" transform="translate(-16086 -1869.414)" fill="#010001"/></g></svg></div>'
+            ],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                767: {
+                    items: 2,
+                },
+                992: {
+                    items: 3,
+                },
+            },
+        });
+    } 
 
 // Filter Listing
     jQuery(document).on('click', '.box-filter .filter--sort', function() {
@@ -256,6 +299,24 @@ jQuery(document).ready(function($) {
         return jQuery(a).text().toUpperCase()
             .indexOf(m[3].toUpperCase()) >= 0;
     };
+
+// Video
+    var myVideo = document.getElementById("video"); 
+    var iframe = document.getElementById("iframe"); 
+    jQuery(document).on('click', '.child--video .video--play span', function(e){
+        if(myVideo){
+            myVideo.play();            
+        } else if(iframe) {
+            e.preventDefault();
+            jQuery('#iframe')[0].src += "&autoplay=1";
+        }
+        jQuery(this).closest('.child--video').addClass('played');
+    });
+    if(myVideo){
+        myVideo.onpause = function() {
+            jQuery('.child--video').removeClass('played');
+        };
+    }
 
 // Dropdown
     var x, i, j, l, ll, selElmnt, a, b, c;

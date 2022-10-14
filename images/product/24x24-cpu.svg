@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+  <g id="_24x24-cpu" data-name="24x24-cpu" transform="translate(1 1)">
+    <path id="boundingbox" d="M0,0H64V64H0Z" fill="#f15a29" stroke="#010001" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0"/>
+    <g id="cpu" transform="translate(5.333 5.333)">
+      <path id="Rectangle_5732" data-name="Rectangle 5732" d="M-1-1H41.667V41.667H-1ZM36.333,4.333h-32v32h32Z" transform="translate(6.333 6.333)" fill="#010001"/>
+      <path id="Path_45856" data-name="Path 45856" d="M8,8H29.333V29.333H8Zm16,5.333H13.333V24H24Z" transform="translate(8 8)" fill="#010001"/>
+      <path id="Path_45857" data-name="Path 45857" d="M12.667,14.333H2V9H12.667Z" transform="translate(-2 9.667)" fill="#010001"/>
+      <path id="Path_45858" data-name="Path 45858" d="M12.667,18.333H2V13H12.667Z" transform="translate(-2 16.333)" fill="#010001"/>
+      <path id="Path_45859" data-name="Path 45859" d="M14.333,12.667H9V2h5.333Z" transform="translate(9.667 -2)" fill="#010001"/>
+      <path id="Path_45860" data-name="Path 45860" d="M18.333,12.667H13V2h5.333Z" transform="translate(16.333 -2)" fill="#010001"/>
+      <path id="Path_45861" data-name="Path 45861" d="M28.667,14.333H18V9H28.667Z" transform="translate(24.667 9.667)" fill="#010001"/>
+      <path id="Path_45862" data-name="Path 45862" d="M28.667,18.333H18V13H28.667Z" transform="translate(24.667 16.333)" fill="#010001"/>
+      <path id="Path_45863" data-name="Path 45863" d="M18.333,28.667H13V18h5.333Z" transform="translate(16.333 24.667)" fill="#010001"/>
+      <path id="Path_45864" data-name="Path 45864" d="M14.333,28.667H9V18h5.333Z" transform="translate(9.667 24.667)" fill="#010001"/>
+    </g>
+  </g>
+</svg>

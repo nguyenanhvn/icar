@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+  <g id="_24x24-display" data-name="24x24-display" transform="translate(1 1)">
+    <path id="boundingbox" d="M0,0H64V64H0Z" fill="#f15a29" stroke="#010001" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0"/>
+    <g id="display" transform="translate(5.333 10.667)">
+      <path id="Rectangle_5734" data-name="Rectangle 5734" d="M7-1H44.333a8.009,8.009,0,0,1,8,8V33.667a8.009,8.009,0,0,1-8,8H7a8.009,8.009,0,0,1-8-8V7A8.009,8.009,0,0,1,7-1ZM44.333,36.333A2.67,2.67,0,0,0,47,33.667V7a2.67,2.67,0,0,0-2.667-2.667H7A2.67,2.67,0,0,0,4.333,7V33.667A2.67,2.67,0,0,0,7,36.333Z" transform="translate(1 1)" fill="#010001"/>
+      <path id="Path_45880" data-name="Path 45880" d="M11.333,21.333H6V8H19.333v5.333h-8Z" transform="translate(4.667 2.667)" fill="#010001"/>
+      <path id="Path_45881" data-name="Path 45881" d="M26.333,24.333H13V19h8V11h5.333Z" transform="translate(16.333 7.667)" fill="#010001"/>
+    </g>
+  </g>
+</svg>
