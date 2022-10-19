@@ -64,6 +64,10 @@
                             font: normal normal 500 24px/28px SVN-Circular;
                             letter-spacing: 0px;
                             color: #010001;
+                            @media (max-width: 767px){
+                                font-size: 18px;
+                                line-height: 1.3;
+                            }
                         }
                         span{
                             display: block;
@@ -71,6 +75,9 @@
                             font: normal normal normal 16px/24px SVN-Circular;
                             letter-spacing: 0px;
                             color: #4C4C4C;
+                            @media (max-width: 450px){
+                                font-size: 14px;
+                            }
                         }
                     }
                 }
@@ -78,7 +85,7 @@
                     font: normal normal 500 24px/28px SVN-Circular;
                     @media (max-width: 767px){
                         font-size: 18px;
-                        line-height: 1.2;
+                        line-height: 1.3;
                     }
                     span{
                         color: $color;
@@ -217,12 +224,70 @@
         }
     }
 
+// Tabs
+    .tabs{
+        padding: 173px 0 0;
+        position: relative;
+        border-bottom: 2px solid #ccc;
+        @media (max-width: 992px){
+            padding-top: 100px;
+        }
+        .tabs-bg{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            max-height: 250px;
+            background: url(../images/bg-search.png) no-repeat right center;
+            width: 100%;
+        }
+        .box{
+            @media (max-width: 767px){
+                overflow-x: scroll;
+                overflow-y: hidden;
+                padding-bottom: 3px;
+            }            
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0 0 -2px;
+            display: flex;
+            width: max-content;
+            li{
+                &.current_page_item{
+                    a{
+                        border-bottom: 2px solid $color;
+                        color: #010101;
+                    }
+                }
+                a{
+                    display: block;
+                    padding: 24px;
+                    font: normal normal 500 20px/1.2 SVN-Circular;
+                    color: #4C4C4C;
+                    @media (max-width: 767px){
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+
 // Banner
     .banner{
         &.style-image{
             .child{
                 img{
                     position: static;
+                    @media (max-width: 767px){
+                        display: none;
+                    }
+                    + img{
+                        display: none;
+                        @media (max-width: 767px){
+                            display: block;
+                        }
+                    }
                 }
             }
             .nav__prev,
@@ -233,16 +298,16 @@
         .owl-item{
             &.active .child .child--box{
                 .child--title{                    
-                    -webkit-animation-duration: 1s;
-                    animation-duration: 1s;
+                    -webkit-animation-duration: 3s;
+                    animation-duration: 3s;
                     -webkit-animation-fill-mode: both;
                     animation-fill-mode: both;
                     animation-name: fadeIn;
                     animation-delay: 0.2s;
                 }
                 .child--text {
-                    -webkit-animation-duration: 1s;
-                    animation-duration: 1s;
+                    -webkit-animation-duration: 3s;
+                    animation-duration: 3s;
                     -webkit-animation-fill-mode: both;
                     animation-fill-mode: both;
                     animation-name: fadeIn;
@@ -273,7 +338,16 @@
                     padding: 60px 0 0;
                     max-width: 90%;
                 }
+                @media (max-width: 767px){
+                    height: auto;
+                    min-height: 500px;
+                }
+                .child--title{
+                    opacity: 0;
+                    line-height: 1.5;
+                }
                 .child--text{
+                    opacity: 0;
                     margin-top: 24px;
                 }
             }
@@ -421,9 +495,53 @@
             @media (max-width: 992px){
                 grid-template-columns: 1fr;
             }
-            .box-left{                
-                img{
-                    width: 100%;
+            .box-left{
+                height: 502px;
+                position: relative;
+                @media (max-width: 1200px){
+                    height: auto;
+                }
+                &:hover{    
+                    img:not(.img--ipad){
+                        &.img--1{
+                            transform: rotate(5deg);
+                            bottom: -26px;
+                            left: -60px;
+                        }
+                        &.img--2{
+                            transform: rotate(-5deg);
+                            top: -27px;
+                            right: -40px;
+                        }
+                    }
+                }
+                .img--ipad{
+                    @media (min-width: 1201px){
+                        display: none;
+                    }
+                }
+                img:not(.img--ipad){
+                    position: absolute;
+                    @include transition;
+                    @media (max-width: 1200px){
+                        display: none;
+                    }
+                    &.img--1{
+                        bottom: -6px;
+                        right: 0;
+                        left: 10px;
+                        margin: auto;
+                    }
+                    &.img--2{
+                        top: -7px;
+                        right: -20px;
+                    }
+                    &.img--3{
+                        top: 0;
+                        right: 0;
+                        left: 0;
+                        bottom: 0;
+                    }
                 }
             }
             .box-right{
@@ -573,11 +691,11 @@
             padding: 50px 0;
         }
         .box-scroll{
-            overflow-x: scroll;
-            overflow-y: hidden;
             margin: 32px 0 43px;
             @media (max-width: 767px){
                 margin: 20px 0 30px;
+                overflow-x: scroll;
+                overflow-y: hidden;
             }
         }
         .nav{
@@ -804,8 +922,8 @@
                     .item--title{
                         font: normal normal 500 20px/1.2 SVN-Circular;
                         color: #010001;
-                        @media (max-width: 450px){
-                            font-size: 16px;
+                        @media (max-width: 767px){
+                            font-size: 17px;
                         }
                     }
                     .item--price{
@@ -1787,6 +1905,16 @@
         @media (max-width: 992px){
             padding: 50px 0;
         }
+        &.other-style{
+            .box-content{
+                .content--items{
+                    .item .item--thumb{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
         .box-content{
             margin-top: 36px;
             grid-template-columns: 488px 1fr;
@@ -1871,6 +1999,7 @@
                     position: relative;
                     @media (max-width: 450px){
                         grid-template-columns: 1fr 110px;
+                        grid-gap: 18px;
                     }
                     &:hover{
                         &:after{
@@ -1910,7 +2039,7 @@
                             }
                         }
                         .item--title{
-                            margin-top: 14px;
+                            margin: 14px 0 0;
                             font: normal normal 500 24px/28px SVN-Circular;
                             color: #010001;
                             @media (max-width: 767px){
@@ -1935,6 +2064,220 @@
                             width: 100%;
                             height: 100%;
                             object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+// News
+    .news{
+        padding: 80px 0;
+        @media (max-width: 992px){
+            padding: 50px 0;
+        }
+        .box-items{
+            display: grid;
+            grid-template-columns: repeat(4, minmax(10px, 1fr));
+            grid-gap: 24px;
+            margin-top: 48px;
+            @media (max-width: 1200px){
+                grid-template-columns: repeat(3, minmax(10px, 1fr));
+            }
+            @media (max-width: 992px){
+                grid-template-columns: repeat(2, minmax(10px, 1fr));
+            }
+            @media (max-width: 450px){
+                grid-template-columns: 1fr;
+                margin-top: 32px;
+            }
+            .item{
+                @media (max-width: 450px){
+                    display: grid;
+                    grid-template-columns: 110px 1fr;
+                    grid-gap: 18px;
+                }
+                .item--thumb{
+                    position: relative;
+                    min-height: 80px;
+                    @media (min-width: 451px){
+                        padding-top: 75%;
+                    }
+                    img{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        @media (max-width: 450px){
+                            height: 80px;
+                        }
+                    }
+                }
+                .item--caption{
+                    margin-top: 24px;
+                    @media (max-width: 450px){
+                        margin: 0;
+                    }
+                    .item--date{
+                        font: normal normal 500 16px/20px SVN-Circular;
+                        color: #4C4C4C;
+                        text-transform: uppercase;
+                        padding-left: 12px;
+                        position: relative;
+                        @media (max-width: 450px){
+                            font-size: 14px;
+                        }
+                        &:before{
+                            content: '';
+                            position: absolute;
+                            top: 2px;
+                            left: 0;
+                            bottom: 2px;
+                            width: 2px;
+                            background: $color;
+                        }
+                    }
+                    .item--title{
+                        margin: 8px 0 0;
+                        a{
+                            display: inline-block;
+                            font: normal normal 500 20px/1.2 SVN-Circular;
+                            color: #010001;
+                            @include transition;
+                            @media (max-width: 767px){
+                                font-size: 17px;
+                            }
+                            &:hover{
+                                color: $color;
+                            }                            
+                        }
+                    }
+                }
+            }
+        }
+        .box-list{
+            border-top: 2px solid #E5E5E5;
+            margin-top: 36px;
+            @media (max-width: 450px){
+                margin-top: 32px;
+            }
+            .item{
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;
+                grid-gap: 24px;
+                padding: 32px 0;
+                border-bottom: 2px solid #E5E5E5;
+                position: relative;
+                @media (max-width: 767px){
+                    grid-template-columns: 1fr 150px;
+                    grid-gap: 14px 30px;
+                    padding: 24px 0;
+                }
+                @media (max-width: 450px){
+                    grid-template-columns: 1fr 110px;
+                    grid-gap: 14px 18px;
+                }
+                &:hover{
+                    &:after{
+                        width: 100%;
+                    }
+                }
+                &:after{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 0;
+                    bottom: -2px;
+                    height: 2px;
+                    background: $color;
+                    @include transition;
+                }
+                .item--date {
+                    font: normal normal medium 16px/1.3 SVN-Circular;
+                    color: #4C4C4C;
+                    @media (max-width: 767px){
+                        grid-column-start: 1;
+                        grid-column-end: 3;
+                    }
+                    @media (max-width: 450px){
+                        font-size: 14px;
+                    }
+                    .date--area{
+                        padding-left: 28px;
+                        position: relative;
+                        @media (max-width: 767px){
+                            display: none;
+                        }
+                        &:before{
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 4px;
+                            background: $color;
+                            bottom: 0;
+                        }
+                        span{
+                            display: block;
+                            margin-top: 12px;
+                        }
+                    }
+                    .date--mobile{
+                        padding-left: 12px;
+                        position: relative;
+                        &:before{
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 2px;
+                            background: $color;
+                            bottom: 0;
+                        }
+                    }
+                }
+                .item--caption{
+                    .item--title{
+                        margin: 0;
+                        font: normal normal 500 28px/40px SVN-Circular;
+                        color: #010001;
+                        a{
+                            font: normal normal 500 28px/40px SVN-Circular;
+                            color: #010001;
+                            @media (max-width: 992px){
+                                font-size: 24px;
+                                line-height: 1.3;
+                            }
+                            @media (max-width: 450px){
+                                font-size: 20px;
+                            }
+                            &:hover{                                
+                                text-decoration: underline;
+                            }
+                        }
+                        @media (max-width: 992px){
+                            font-size: 24px;
+                            line-height: 1.3;
+                        }
+                        @media (max-width: 450px){
+                            font-size: 20px;
+                        }
+                    }
+                    .item--text{
+                        margin-top: 17px;
+                        font: normal normal normal 20px/1.5 SVN-Circular;
+                        @include textConver(3);
+                        color: #4C4C4C;
+                        @media (max-width: 992px){
+                            font-size: 18px;
+                        }
+                        @media (max-width: 767px){
+                            display: none;
                         }
                     }
                 }
@@ -3557,6 +3900,7 @@
 
 // Slider News
     .snews{
+        overflow: hidden;
         padding: 80px 0;
         @media (max-width: 992px){
             padding: 50px 0;
