@@ -1,0 +1,17 @@
+<svg id="logo-dantri" xmlns="http://www.w3.org/2000/svg" width="160" height="80" viewBox="0 0 160 80">
+  <g id="Group_18591" data-name="Group 18591">
+    <rect id="boundingbox" width="160" height="80" fill="#fff" opacity="0"/>
+    <g id="Group_18590" data-name="Group 18590" transform="translate(22.5 26.8)">
+      <g id="Group_18587" data-name="Group 18587" transform="translate(0 0.028)">
+        <g id="Group_18586" data-name="Group 18586">
+          <path id="Path_45855" data-name="Path 45855" d="M58.9.2V13.236L50.45.2H42.634V17.13L36.752.2H33.023l2.762,3.59H29.267l2.6-3.259L32.084.2H28.273L23.081,14.534S23.744,1.5,12.006.863H.931L.6.5V26.575H11.675s5.551-.331,8.782-4.226l-1.3,3.922h7.816l1.3-3.922h7.816l1.3,3.922H49.759v-12.4l9.114,12.373h7.153V.2ZM14.934,14.837A4.2,4.2,0,0,1,12.973,18.1s-1.3,1.3-4.557,1.3V7.684h1.961s4.557.663,4.557,5.22Zm15.632.663,1.961-3.922L34.487,15.5Z" transform="translate(-0.6 -0.2)" fill="#0f6c32"/>
+        </g>
+      </g>
+      <g id="Group_18589" data-name="Group 18589" transform="translate(68.74 0)">
+        <g id="Group_18588" data-name="Group 18588">
+          <path id="Path_45856" data-name="Path 45856" d="M293.467,3.69h-3.259L292.5.1h-4.557V4.657A8.789,8.789,0,0,0,282.089.1H249.5V7.916h5.855V26.171h7.153V7.943h5.855V26.2h7.153V19.653l5.22,6.518H295.76V1.426ZM278.5,12.169h-2.624V6.949h1.961a3.269,3.269,0,0,1,1.961,3.259A2.334,2.334,0,0,1,278.5,12.169Zm9.749,11.075-4.557-6.518s1.961-.663,4.557-4.557Z" transform="translate(-249.5 -0.1)" fill="#0f6c32"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
