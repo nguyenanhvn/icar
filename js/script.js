@@ -240,6 +240,7 @@ jQuery(document).ready(function($) {
         jQuery('.menu2-responsive').removeClass('open');
         jQuery('.menu-responsive').removeClass('open');
         jQuery('.action--hambuger').removeClass('open');
+        jQuery('body').removeClass('none-scroll');
     });
     jQuery(document).on('click', '.menu2-responsive .menu--back', function(){
         jQuery('.menu2-responsive').removeClass('open');
@@ -310,9 +311,30 @@ jQuery(document).ready(function($) {
         }
         jQuery(this).closest('.child--video').addClass('played');
     });
+    jQuery(document).on('click', '.videos .box-main .video--play span', function(){
+        if(myVideo){
+            myVideo.play();            
+        }
+        jQuery(this).closest('.video').addClass('played');
+    });
+    jQuery(document).on('click', '.videos .box-list .video--play span', function(){
+        var srcVideo = jQuery(this).closest('.video').find('source').attr('src');
+        var titleVideo = jQuery(this).parent().find('strong').text();
+
+        var source = document.getElementById('source');
+
+        source.setAttribute('src', srcVideo);
+
+        myVideo.load();
+        myVideo.play();
+
+        jQuery('#source').closest('.video').addClass('played');
+        jQuery('#source').closest('.video').find('strong').text(titleVideo);
+    });
     if(myVideo){
         myVideo.onpause = function() {
             jQuery('.child--video').removeClass('played');
+            jQuery('.video').removeClass('played');
         };
     }
 
