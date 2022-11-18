@@ -5,7 +5,7 @@
     $color-hover: #d44413;
     $color-dark: #007066;
     $color-dark-hover: #005C53;
-    $color-text: #252A31;
+    $color-text: #010101;
     $slate: #4a5264;
     $slate-hover: #3d4452;
     $border: #E9ECF1;
@@ -59,9 +59,9 @@
         font-size: 60%;
     }
 
-	@media (min-width: 1401px){
+	@media (min-width: 1201px){
 		.container{
-			width: 1344px;
+			width: 1200px;
             max-width: 100%;
 		}
 	}
@@ -188,7 +188,7 @@
         }
     }
     .conn_text{
-        font: normal normal 300 20px/1.5 SVN-Circular;
+        font: normal normal normal 20px/1.5 SVN-Circular;
         letter-spacing: 0px;
         color: #E5E5E5;
         max-width: 1100px;
@@ -222,6 +222,9 @@
         cursor: pointer;
         pointer-events: auto;
         height: 48px;
+        outline: none;
+        border: 0;
+        border-radius: 0;
         &.small-type{
             padding: 12px 20px;
             display: inline-block;
@@ -246,6 +249,9 @@
         //     line-height: 42px;
         //     height: 42px;
         // }
+        &.conn_btn-left{
+            margin: 0;
+        }
         &:before{
             content: '';
             position: absolute;

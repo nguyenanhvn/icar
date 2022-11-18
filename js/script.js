@@ -28,8 +28,8 @@ jQuery(document).ready(function($) {
             dots: true,
             items: 1,
             navText: [
-                '<div class="nav__prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="#fff" opacity="0"/><g id="arrow-left"><path d="M16132.414,1882.83h0l-1.414-1.414,1.414-1.414,6-6,1.415,1.414-5,5h11.585v2h-11.588l5,5-1.415,1.414Z" transform="translate(-16127.414 -1869.414)" fill="#010001"/></g></svg></div>',
-                '<div class="nav__next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="#fff" opacity="0"/><g id="arrow-right"><path d="M16097.588,1887.414l5-5H16091v-2h11.589l-5-5L16099,1874l6,6,1.414,1.415-7.417,7.413Z" transform="translate(-16086 -1869.414)" fill="#010001"/></g></svg></div>'
+                '<div class="nav__prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="#fff" opacity="0"/><g id="arrow-left"><path d="M16132.414,1882.83h0l-1.414-1.414,1.414-1.414,6-6,1.415,1.414-5,5h11.585v2h-11.588l5,5-1.415,1.414Z" transform="translate(-16127.414 -1869.414)" fill="#fff"/></g></svg></div>',
+                '<div class="nav__next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="#fff" opacity="0"/><g id="arrow-right"><path d="M16097.588,1887.414l5-5H16091v-2h11.589l-5-5L16099,1874l6,6,1.414,1.415-7.417,7.413Z" transform="translate(-16086 -1869.414)" fill="#fff"/></g></svg></div>'
             ],
         });
     } 
@@ -260,17 +260,24 @@ jQuery(document).ready(function($) {
 
     jQuery(document).on('change', '.dropdown .dropdown--checkboxes input', function(){
         var count = jQuery(this).closest('.dropdown--checkboxes').find('input:checked').length;
+        var current = jQuery(this).closest('.dropdown--checkboxes').find('input:checked').val();
         if (jQuery(this).val() == 'Tất cả' && jQuery(this).prop('checked')) {
             jQuery(this).closest('.dropdown--checkboxes').find('input').prop('checked', true);
             jQuery(this).closest('.dropdown').find('.dropdown--current span').text('Tất cả');
         } else if (jQuery(this).val() == 'Tất cả' && !jQuery(this).prop('checked')) {
             jQuery(this).closest('.dropdown--checkboxes').find('input').prop('checked', false);
-            jQuery(this).closest('.dropdown').find('.dropdown--current span').text(0 + ' lựa chọn');
+            jQuery(this).closest('.dropdown').find('.dropdown--current span').text(jQuery(this).closest('.dropdown').find('.dropdown--current span').attr('text'));
         } else {            
             if(jQuery(this).closest('.dropdown--checkboxes').find('input[value="Tất cả"]:checked')){
                 jQuery(this).closest('.dropdown--checkboxes').find('input[value="Tất cả"]').prop('checked', false);
             };
-            jQuery(this).closest('.dropdown').find('.dropdown--current span').text(count + ' lựa chọn');
+            if(count == 0){
+                jQuery(this).closest('.dropdown').find('.dropdown--current span').text(jQuery(this).closest('.dropdown').find('.dropdown--current span').attr('text'));
+            } else if(count > 1){
+                jQuery(this).closest('.dropdown').find('.dropdown--current span').text(count + ' lựa chọn');
+            } else {
+                jQuery(this).closest('.dropdown').find('.dropdown--current span').text(current);
+            }
         }
     });
     
@@ -318,25 +325,28 @@ jQuery(document).ready(function($) {
         jQuery(this).closest('.video').addClass('played');
     });
     jQuery(document).on('click', '.videos .box-list .video--play span', function(){
-        var srcVideo = jQuery(this).closest('.video').find('source').attr('src');
-        var titleVideo = jQuery(this).parent().find('strong').text();
-
-        var source = document.getElementById('source');
-
-        source.setAttribute('src', srcVideo);
-
-        myVideo.load();
-        myVideo.play();
-
-        jQuery('#source').closest('.video').addClass('played');
-        jQuery('#source').closest('.video').find('strong').text(titleVideo);
+        if(jQuery(window).width() > 993){
+            var srcVideo = jQuery(this).closest('.video').find('source').attr('src');
+            var titleVideo = jQuery(this).parent().find('strong').text();
+    
+            var source = document.getElementById('source');
+    
+            source.setAttribute('src', srcVideo);
+    
+            myVideo.load();
+            myVideo.play();
+    
+            jQuery('#source').closest('.video').addClass('played');
+            jQuery('#source').closest('.video').find('strong').text(titleVideo);
+        } else {
+            jQuery(this).closest('.video').toggleClass('played');
+            jQuery(this).closest('.video').find('video').get(0).play();
+        }
     });
-    if(myVideo){
-        myVideo.onpause = function() {
-            jQuery('.child--video').removeClass('played');
-            jQuery('.video').removeClass('played');
-        };
-    }
+    $("video").on("pause", function (e) {
+        jQuery(this).closest('.child--video').removeClass('played');
+        jQuery(this).closest('.video').removeClass('played');
+    });
 
 // Dropdown
     var x, i, j, l, ll, selElmnt, a, b, c;
