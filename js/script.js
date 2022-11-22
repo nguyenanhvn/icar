@@ -210,7 +210,7 @@ jQuery(document).ready(function($) {
         jQuery(this).closest('.header-bottom').addClass('searched');
     });
     jQuery(document).on('click', '.action--search .search--box .search--reset', function(){
-        jQuery(this).closest('.search--box').find('input').val('');
+        jQuery('.header-bottom').removeClass('searched');
     });
     
     jQuery(document).on('click', '.action--search .search--box', function(e){
@@ -246,7 +246,7 @@ jQuery(document).ready(function($) {
         jQuery('.menu2-responsive').removeClass('open');
     });
 
-    jQuery(document).on('click', '.dropdown .dropdown--current', function(){
+    jQuery(document).on('click', '.dropdown:not(.disabled) .dropdown--current', function(){
         var index = jQuery(this).closest('.dropdown').index();
         for (let i = 0; i < jQuery('.dropdown').length; i++) {
             if (i != index){
@@ -418,7 +418,7 @@ jQuery(document).ready(function($) {
             $(".dropdown").removeClass('active');
         }
     });
-    
+
     var x, i, j, l, ll, selElmnt, a, b, c;
     /* Look for any elements with the class "custom-select": */
     x = document.getElementsByClassName("dropdown--by");
@@ -477,10 +477,292 @@ jQuery(document).ready(function($) {
         }
         x[i].appendChild(b);
     }
+
+// Dropdown ICAN
+    if(jQuery('#hang-xe').length > 0){
+        renderDropdown();
+    }
 });
 
 function copy(copyText) {
     // Copy the text inside the text field
     navigator.clipboard.writeText(copyText);
     alert("Đã copy");
+}
+function renderDropdown(){    
+    var x, j, ll, selElmnt, a, b, c;
+    /* Look for any elements with the class "custom-select": */
+    var options = '<option value="All">All</option>';
+    var arr = [];
+    for (let index = 0; index < jQuery('.table--cars .item').length; index++) {
+        var name = jQuery('.table--cars .item:eq('+index+')').attr('data-name');
+        if(arr.length == 0 || !arr.find(abc => abc == name)){
+            options += '<option value="'+name+'">'+name+'</option>';
+            arr.push(name);
+        }
+    }
+    jQuery('#hang-xe select').html(options);
+    jQuery('#dong-xe').closest('.dropdown').addClass('disabled');
+    jQuery('#doi-xe').closest('.dropdown').addClass('disabled');
+
+    x = document.getElementById("hang-xe");
+    selElmnt = x.getElementsByTagName("select")[0];
+    ll = selElmnt.length;
+    /* For each element, create a new DIV that will act as the selected item: */
+    a = document.createElement("span");
+    a.setAttribute("class", "select-selected");
+    // a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    // a.innerText = selElmnt.options[selElmnt.selectedIndex].innerText;
+    if(selElmnt.options[selElmnt.selectedIndex].id) {
+        a.id = selElmnt.options[selElmnt.selectedIndex].id;
+    }
+    x.parentElement.parentElement.firstElementChild.firstElementChild.appendChild(a);
+    /* For each element, create a new DIV that will contain the option list: */
+    b = document.createElement("ul");
+    b.setAttribute("class", "select-items");
+    for (j = 0; j < ll; j++) {
+        /* For each option in the original select element,
+        create a new DIV that will act as an option item: */
+        c = document.createElement("li");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        if (selElmnt.options[j].selected){
+            c.setAttribute("class", 'same-as-selected');
+        }
+        if(selElmnt.options[j].id) {
+            c.id = selElmnt.options[j].id;
+        }
+        c.addEventListener("click", function(e) {
+            /* When an item is clicked, update the original select box,
+            and the selected item: */
+            var y, i, k, s, h, sl, yl;
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            sl = s.length;
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < sl; i++) {
+                if (s.options[i].innerHTML == this.innerHTML) {
+                    s.selectedIndex = i;
+                    h.innerHTML = this.innerHTML;
+                    h.id = this.id;
+                    y = this.parentNode.getElementsByClassName("same-as-selected");
+                    yl = y.length;
+                    for (k = 0; k < yl; k++) {
+                    y[k].removeAttribute("class");
+                    }
+                    this.setAttribute("class", "same-as-selected");
+                    break;
+                }
+            }
+            // h.click();
+            jQuery('.dropdown').removeClass('active');
+            jQuery('.dropdown--options').addClass('select-hide');
+            jQuery(this).closest('.dropdown').find('.dropdown--current span').html(jQuery(this).text());
+            jQuery('.table--cars .item').show();
+            if(jQuery(this).text() != 'All'){
+                for (let index = 0; index < jQuery('.table--cars .item').length; index++) {
+                    var name = jQuery('.table--cars .item:eq('+index+')').attr('data-name');
+                    if(jQuery(this).text() != name){
+                        jQuery('.table--cars .item:eq('+index+')').hide();
+                    }
+                }
+            }
+            renderDropdown2(jQuery(this).text());
+            jQuery('#dong-xe .select-items').closest('.dropdown').find('.dropdown--current span').text('Dòng xe');
+            jQuery('#doi-xe .select-items').closest('.dropdown').find('.dropdown--current span').text('Đời xe');
+        });
+        b.appendChild(c);
+    }
+    x.appendChild(b);
+}
+function renderDropdown2(text){    
+    var x, j, ll, selElmnt, a, b, c;
+    /* Look for any elements with the class "custom-select": */
+    var options = '<option value="All">All</option>';
+    var arr = [];
+    for (let index = 0; index < jQuery('.table--cars .item').length; index++) {
+        var name = jQuery('.table--cars .item:eq('+index+')').attr('data-name');
+        var classN = jQuery('.table--cars .item:eq('+index+')').attr('data-class');
+        if(name == text){
+            if(!arr.find(abc => abc == classN)){
+                options += '<option value="'+classN+'">'+classN+'</option>';
+                arr.push(classN);
+            }
+        }
+    }
+    jQuery('#dong-xe select').html(options);
+    if(text != 'All'){
+        jQuery('#dong-xe').closest('.dropdown').removeClass('disabled');
+    } else {
+        jQuery('#dong-xe').closest('.dropdown').addClass('disabled');
+    }
+    jQuery('#doi-xe').closest('.dropdown').addClass('disabled');
+    jQuery('#dong-xe .select-items').remove();
+    x = document.getElementById("dong-xe");
+    selElmnt = x.getElementsByTagName("select")[0];
+    ll = selElmnt.length;
+    /* For each element, create a new DIV that will act as the selected item: */
+    a = document.createElement("span");
+    a.setAttribute("class", "select-selected");
+    // a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    // a.innerText = selElmnt.options[selElmnt.selectedIndex].innerText;
+    if(selElmnt.options[selElmnt.selectedIndex].id) {
+        a.id = selElmnt.options[selElmnt.selectedIndex].id;
+    }
+    x.parentElement.parentElement.firstElementChild.firstElementChild.appendChild(a);
+    /* For each element, create a new DIV that will contain the option list: */
+    b = document.createElement("ul");
+    b.setAttribute("class", "select-items");
+    for (j = 0; j < ll; j++) {
+        /* For each option in the original select element,
+        create a new DIV that will act as an option item: */
+        c = document.createElement("li");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        if (selElmnt.options[j].selected){
+            c.setAttribute("class", 'same-as-selected');
+        }
+        if(selElmnt.options[j].id) {
+            c.id = selElmnt.options[j].id;
+        }
+        c.addEventListener("click", function(e) {
+            /* When an item is clicked, update the original select box,
+            and the selected item: */
+            var y, i, k, s, h, sl, yl;
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            sl = s.length;
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < sl; i++) {
+                if (s.options[i].innerHTML == this.innerHTML) {
+                    s.selectedIndex = i;
+                    h.innerHTML = this.innerHTML;
+                    h.id = this.id;
+                    y = this.parentNode.getElementsByClassName("same-as-selected");
+                    yl = y.length;
+                    for (k = 0; k < yl; k++) {
+                    y[k].removeAttribute("class");
+                    }
+                    this.setAttribute("class", "same-as-selected");
+                    break;
+                }
+            }
+            // h.click();
+            jQuery('.dropdown').removeClass('active');
+            jQuery('.dropdown--options').addClass('select-hide');
+            jQuery(this).closest('.dropdown').find('.dropdown--current span').html(jQuery(this).text());
+            jQuery('.table--cars .item').show();
+            for (let index = 0; index < jQuery('.table--cars .item').length; index++) {
+                var name = jQuery('.table--cars .item:eq('+index+')').attr('data-name');
+                var classN = jQuery('.table--cars .item:eq('+index+')').attr('data-class');
+                if(jQuery(this).text() == 'All'){
+                    if((name != text)){
+                        jQuery('.table--cars .item:eq('+index+')').hide();
+                    }
+                } else {
+                    if(jQuery(this).text() == classN && name == text){
+                        jQuery('.table--cars .item:eq('+index+')').show();
+                    } else {
+                        jQuery('.table--cars .item:eq('+index+')').hide();
+                    }
+                }
+            }
+            renderDropdown3(text, jQuery(this).text());
+            jQuery('#doi-xe .select-items').closest('.dropdown').find('.dropdown--current span').text('Đời xe');
+        });
+        b.appendChild(c);
+    }
+    x.appendChild(b);
+}
+function renderDropdown3(text, oClass){    
+    var x, j, ll, selElmnt, a, b, c;
+    /* Look for any elements with the class "custom-select": */
+    var options = '<option value="All">All</option>';
+    var arr = [];
+    for (let index = 0; index < jQuery('.table--cars .item').length; index++) {
+        var name = jQuery('.table--cars .item:eq('+index+')').attr('data-name');
+        var classN = jQuery('.table--cars .item:eq('+index+')').attr('data-class');
+        var year = jQuery('.table--cars .item:eq('+index+')').attr('data-year');
+        if(arr.length == 0 || !arr.find(abc => abc == year)){
+            if(name == text && classN == oClass){
+                options += '<option value="'+year+'">'+year+'</option>';
+                arr.push(year);
+            }
+        }
+    }
+    jQuery('#doi-xe select').html(options);
+    jQuery('#doi-xe').closest('.dropdown').removeClass('disabled');
+    jQuery('#doi-xe .select-items').remove();
+    x = document.getElementById("doi-xe");
+    selElmnt = x.getElementsByTagName("select")[0];
+    ll = selElmnt.length;
+    /* For each element, create a new DIV that will act as the selected item: */
+    a = document.createElement("span");
+    a.setAttribute("class", "select-selected");
+    // a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    // a.innerText = selElmnt.options[selElmnt.selectedIndex].innerText;
+    if(selElmnt.options[selElmnt.selectedIndex].id) {
+        a.id = selElmnt.options[selElmnt.selectedIndex].id;
+    }
+    x.parentElement.parentElement.firstElementChild.firstElementChild.appendChild(a);
+    /* For each element, create a new DIV that will contain the option list: */
+    b = document.createElement("ul");
+    b.setAttribute("class", "select-items");
+    for (j = 0; j < ll; j++) {
+        /* For each option in the original select element,
+        create a new DIV that will act as an option item: */
+        c = document.createElement("li");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        if (selElmnt.options[j].selected){
+            c.setAttribute("class", 'same-as-selected');
+        }
+        if(selElmnt.options[j].id) {
+            c.id = selElmnt.options[j].id;
+        }
+        c.addEventListener("click", function(e) {
+            /* When an item is clicked, update the original select box,
+            and the selected item: */
+            var y, i, k, s, h, sl, yl;
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            sl = s.length;
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < sl; i++) {
+                if (s.options[i].innerHTML == this.innerHTML) {
+                    s.selectedIndex = i;
+                    h.innerHTML = this.innerHTML;
+                    h.id = this.id;
+                    y = this.parentNode.getElementsByClassName("same-as-selected");
+                    yl = y.length;
+                    for (k = 0; k < yl; k++) {
+                    y[k].removeAttribute("class");
+                    }
+                    this.setAttribute("class", "same-as-selected");
+                    break;
+                }
+            }
+            // h.click();
+            jQuery('.dropdown').removeClass('active');
+            jQuery('.dropdown--options').addClass('select-hide');
+            jQuery(this).closest('.dropdown').find('.dropdown--current span').html(jQuery(this).text());
+            jQuery('.table--cars .item').show();
+            for (let index = 0; index < jQuery('.table--cars .item').length; index++) {
+                var name = jQuery('.table--cars .item:eq('+index+')').attr('data-name');
+                var classN = jQuery('.table--cars .item:eq('+index+')').attr('data-class');
+                var year = jQuery('.table--cars .item:eq('+index+')').attr('data-year');
+                if(jQuery(this).text() == 'All'){
+                    if((name != text)){
+                        jQuery('.table--cars .item:eq('+index+')').hide();
+                    } else {
+                        if(oClass != classN){
+                            jQuery('.table--cars .item:eq('+index+')').hide();
+                        }
+                    }
+                } else {
+                    if(oClass == classN && name == text && jQuery(this).text() == year){
+                        jQuery('.table--cars .item:eq('+index+')').show();
+                    } else {
+                        jQuery('.table--cars .item:eq('+index+')').hide();
+                    }
+                }
+            }
+        });
+        b.appendChild(c);
+    }
+    x.appendChild(b);
 }
