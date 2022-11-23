@@ -484,6 +484,34 @@ jQuery(document).ready(function($) {
     }
 
 // Scroll Gioi Thieu
+    if(jQuery(window).width() > 992){
+        setTimeout(function(){
+            var height = jQuery('.introduce5').outerHeight() + jQuery('.introduce6').outerHeight() + jQuery('.introduce7').outerHeight() + jQuery('.introduce8').outerHeight() + jQuery('.footer').outerHeight();
+            console.log(height);
+            jQuery(".introduce4 .img--items").sticky({ 
+                topSpacing: 200, 
+                // bottomSpacing: jQuery('.introduce5').outerHeight() + jQuery('.introduce6').outerHeight() + jQuery('.introduce7').outerHeight() + jQuery('.introduce8').outerHeight() + jQuery('.footer').outerHeight(), 
+                bottomSpacing: height + 120,
+                // getWidthFrom: '60' 
+            });
+        }, 500);
+    }
+    jQuery(window).resize(function(){
+        if(jQuery(window).width() > 992){
+            setTimeout(function(){
+                var height = jQuery('.introduce5').outerHeight() + jQuery('.introduce6').outerHeight() + jQuery('.introduce7').outerHeight() + jQuery('.introduce8').outerHeight() + jQuery('.footer').outerHeight();
+                console.log(height);
+                jQuery(".introduce4 .img--items").sticky({ 
+                    topSpacing: 200, 
+                    // bottomSpacing: jQuery('.introduce5').outerHeight() + jQuery('.introduce6').outerHeight() + jQuery('.introduce7').outerHeight() + jQuery('.introduce8').outerHeight() + jQuery('.footer').outerHeight(), 
+                    bottomSpacing: height + 120,
+                    // getWidthFrom: '60' 
+                });
+            }, 500);
+        } else {
+            jQuery(".tw__component__1 .tw__component__box__slider").unstick();
+        }
+    });
     if(jQuery('#c2').offset().top < $(document).scrollTop() + 300){
         if (jQuery('#c3').offset().top < $(document).scrollTop() + 300){
             $("[data-id=c1]").css('opacity', 0);

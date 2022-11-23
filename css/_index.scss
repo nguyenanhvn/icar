@@ -5371,9 +5371,7 @@
                         display: none;
                     }
                     .img--items{
-                        position: sticky;
-                        top: 20vh;
-                        background-color: #e4e4e4;
+                        height: 536px;
                         .item{
                             position: absolute;
                             left: 0;
@@ -5381,7 +5379,7 @@
                             right: 0;
                             bottom: 0;                            
                             // display: none;
-                            opacity: 0;
+                            // opacity: 0;
                             -webkit-transition: opacity .2s;
                             transition: opacity .2s;
                             span{
@@ -5433,6 +5431,101 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+    .introduce5{
+        padding: 120px 0 230px;
+        position: relative;
+        @media (max-width: 992px){
+            padding: 60px 0 80px;
+        }
+        &:after{
+            content: '';
+            background: url(../images/introduce/intro-2.png) center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.2;
+        }
+        .container{
+            position: relative;
+            z-index: 9;
+        }
+        .box-grid{
+            display: grid;
+            grid-template-columns: 600px 1fr;
+            grid-gap: 32px;
+            margin-top: 84px;
+            @media (max-width: 1200px){
+                grid-template-columns: repeat(2, minmax(10px, 1fr));
+            }
+            @media (max-width: 992px){
+                grid-template-columns: 1fr;
+            }
+            .grid--left{
+                position: relative;
+                .grid--text{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .text--flex{
+                        display: flex;
+                        margin-top: 110px;
+                        .text--box{
+                            position: relative;
+                            span{
+                                display: block;
+                                font: normal normal 500 70px/1.2 SVN-Circular;
+                                letter-spacing: -1.6px;
+                                color: transparent;
+                                -webkit-text-stroke: 1px #d5d5d5;
+                                text-align: right;
+                                &.active{
+                                    -webkit-text-stroke: 1px $color;
+                                    color: $color;
+                                }
+                                @media (max-width: 1200px){
+                                    font-size: 52px;
+                                }
+                            }
+                        }
+                        .text--all{
+                            font: normal normal 500 70px/1 SVN-Circular;
+                            color: #010001;
+                            margin-left: 16px;
+                            padding-top: 8px;
+                            @media (max-width: 1200px){
+                                font-size: 52px;
+                                padding-top: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+            .grid--right{
+                display: flex;
+                align-items: center;
+                max-width: 424px;
+                margin-left: auto;
+                @media (max-width: 992px){
+                    max-width: 100%;
+                }
+                .child{
+                    padding: 50px 0;
+                    .child--text{
+                        color: #4C4C4C;
+                        margin-top: 36px;
                     }
                 }
             }
