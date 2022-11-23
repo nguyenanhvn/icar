@@ -482,8 +482,81 @@ jQuery(document).ready(function($) {
     if(jQuery('#hang-xe').length > 0){
         renderDropdown();
     }
-});
 
+// Scroll Gioi Thieu
+    if(jQuery('#c2').offset().top < $(document).scrollTop() + 300){
+        if (jQuery('#c3').offset().top < $(document).scrollTop() + 300){
+            $("[data-id=c1]").css('opacity', 0);
+            $("[data-id=c2]").css('opacity', 0);
+            $("[data-id=c3]").css('opacity', 1);
+        } else {
+            $("[data-id=c1]").css('opacity', 0);
+            $("[data-id=c3]").css('opacity', 0);
+            $("[data-id=c2]").css('opacity', 1);
+        }
+    } else if($(document).scrollTop() + 300 > jQuery('#c3').offset().top) {
+        $("[data-id=c1]").css('opacity', 0);
+        $("[data-id=c2]").css('opacity', 0);
+        $("[data-id=c3]").css('opacity', 1);
+    } else {
+        $("[data-id=c3]").css('opacity', 0);
+        $("[data-id=c2]").css('opacity', 0);
+        $("[data-id=c1]").css('opacity', 1);
+    }
+    var lastScrollTop = 0, delta = 5;
+	$(window).scroll(function(){
+        if(jQuery('.introduce6').offset().top > $(document).scrollTop() + 500){
+            
+        }
+		var nowScrollTop = $(this).scrollTop();
+		if(Math.abs(lastScrollTop - nowScrollTop) >= delta){
+		 	if (nowScrollTop > lastScrollTop){
+                if(jQuery('#c2').offset().top < $(document).scrollTop() + 300){
+                    if (jQuery('#c3').offset().top < $(document).scrollTop() + 300){
+                        $("[data-id=c1]").css('opacity', 0);
+                        $("[data-id=c2]").css('opacity', 0);
+                        $("[data-id=c3]").css('opacity', 1);
+                    } else {
+                        $("[data-id=c1]").css('opacity', 0);
+                        $("[data-id=c3]").css('opacity', 0);
+                        $("[data-id=c2]").css('opacity', 1);
+                    }
+                } else if($(document).scrollTop() + 300 > jQuery('#c3').offset().top) {
+                    $("[data-id=c1]").css('opacity', 0);
+                    $("[data-id=c2]").css('opacity', 0);
+                    $("[data-id=c3]").css('opacity', 1);
+                } else {
+                    $("[data-id=c3]").css('opacity', 0);
+                    $("[data-id=c2]").css('opacity', 0);
+                    $("[data-id=c1]").css('opacity', 1);
+                }
+		 		// SCROLLING DOWN 
+		 	} else {
+                if(jQuery('#c2').offset().top < $(document).scrollTop() + 600){
+                    if (jQuery('#c3').offset().top < $(document).scrollTop() + 600){
+                        $("[data-id=c1]").css('opacity', 0);
+                        $("[data-id=c2]").css('opacity', 0);
+                        $("[data-id=c3]").css('opacity', 1);
+                    } else {
+                        $("[data-id=c1]").css('opacity', 0);
+                        $("[data-id=c3]").css('opacity', 0);
+                        $("[data-id=c2]").css('opacity', 1);
+                    }
+                } else if($(document).scrollTop() + 600 > jQuery('#c3').offset().top) {
+                    $("[data-id=c1]").css('opacity', 0);
+                    $("[data-id=c2]").css('opacity', 0);
+                    $("[data-id=c3]").css('opacity', 1);
+                } else {
+                    $("[data-id=c3]").css('opacity', 0);
+                    $("[data-id=c2]").css('opacity', 0);
+                    $("[data-id=c1]").css('opacity', 1);
+                }
+		 		// SCROLLING UP 
+			}
+		    lastScrollTop = nowScrollTop;
+		}
+	});
+});
 function copy(copyText) {
     // Copy the text inside the text field
     navigator.clipboard.writeText(copyText);
