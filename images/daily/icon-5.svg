@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Group_19106" data-name="Group 19106" transform="translate(1 1)">
+    <path id="Path_46493" data-name="Path 46493" d="M0,0H48V48H0Z" fill="#fff" stroke="#010001" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0"/>
+    <path id="Union_76" data-name="Union 76" d="M1.236,39.85A1.991,1.991,0,0,1,0,38V18a4,4,0,0,1,4-4h6v4H4v15.17l2.584-2.584A2,2,0,0,1,8,30H22V24H26v6A4,4,0,0,1,22,34H8.828l-5.41,5.418A2,2,0,0,1,2,40,1.964,1.964,0,0,1,1.236,39.85ZM36.59,25.418,31.172,20H18a4,4,0,0,1-4-4v-12A4.006,4.006,0,0,1,18,0H36a4,4,0,0,1,4,4.006V24a2,2,0,0,1-1.234,1.854A1.945,1.945,0,0,1,38,26,2.006,2.006,0,0,1,36.59,25.418ZM18,16H32a2,2,0,0,1,1.422.586L36,19.174V4.006H18Z" transform="translate(3.998 3.998)" fill="#fff"/>
+  </g>
+</svg>
