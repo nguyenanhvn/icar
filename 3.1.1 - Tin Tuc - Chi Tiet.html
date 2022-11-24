@@ -448,7 +448,7 @@
                 <div class="box">
                     <h2 class="conn_heading">Tìm hiểu các cách Nghe Nhạc Xem Phim Bản Đồ Trên Xe Peugeot 2008</h2>
                     <div class="box-info">
-                        <div class="box-name">NGUYỄN VĂN A (TÊN TÁC GIẢ)</div><span>|</span>
+                        <div class="box-name">NGUYỄN VĂN A (TÊN TÁC GIẢ)</div>
                         <div class="box-date">07/06/2015</div>
                     </div>
                     <div class="box-thumb">
@@ -486,7 +486,7 @@
                             <div class="question--1">
                                 <div class="question--text">Bài viết này có hữu ích với bạn không?</div>
                                 <div class="question--buttons">
-                                    <button onClick="yesQuestion()" class="question--yes">
+                                    <button onClick="jQuery('.question--success').removeClass('hide'); jQuery('.question--1').addClass('hide');" class="question--yes">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
                                             <g transform="translate(1 1)">
                                                 <path d="M0,0H24V24H0Z" fill="#f15a29" stroke="#010001" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0" />
@@ -495,7 +495,7 @@
                                         </svg>
                                         <span>Có</span>
                                     </button>
-                                    <button onClick="noQuestion()" class="question--no">
+                                    <button onClick="jQuery('.question--2').removeClass('hide'); jQuery('.question--1').addClass('hide');" class="question--no">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
                                             <g transform="translate(1 1)">
                                                 <path d="M0,0H24V24H0Z" fill="#f15a29" stroke="#010001" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0"/>
@@ -538,6 +538,12 @@
                                         </label>
                                     </li>
                                 </ul>
+                                <div class="question--buttons">
+                                    <button onClick="jQuery('.question--success').removeClass('hide'); jQuery('.question--2').addClass('hide');" class="button--send conn_anim" type="">
+                                        <span class="conn_relative">Gửi đánh giá</span>
+                                    </button>
+                                    <button onClick="jQuery('.box-question').remove()" class="button--back conn_anim" type="">Bỏ qua</button>
+                                </div>
                             </div>
                             <div class="question--success hide">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">

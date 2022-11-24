@@ -5920,11 +5920,16 @@
             display: flex;
             @media (max-width: 450px){
                 font-size: 14px;
+                display: block;
             }
             .box-date{
                 margin-left: 24px;
                 padding-left: 8px;
                 border-left: 1px solid $color;
+                @media (max-width: 450px){
+                    display: block;
+                    margin: 10px 0 0 0;
+                }
             }
         }
         .box-thumb{
@@ -5950,10 +5955,15 @@
                 list-style: none;
                 display: grid;
                 grid-gap: 35px;
+                @media (max-width: 767){
+                    grid-gap: 24px;
+                }
             }
-            .wp-caption{
-                width: calc(100% + 220px);
-                margin: 0 -110px;
+            @media (min-width: 1201px){
+                .wp-caption{
+                    width: calc(100% + 220px);
+                    margin: 0 -110px;
+                }                
             }
             .wp-caption-text{
                 font: normal normal 500 16px/20px SVN-Circular;
@@ -5983,20 +5993,27 @@
                 margin: auto;
             }
             .hide{
-                display: none;
+                display: none !important;
             }
             .question--1{
                 display: flex;
                 min-height: 48px;
                 align-items: center;
                 justify-content: space-between;
+                flex-wrap: wrap;
                 .question--text{
                     display: flex;
                     align-items: center;
                     margin-right: 24px;
+                    @media (max-width: 767px){
+                        margin: 0;
+                    }
                 }
                 .question--buttons{
                     display: flex;
+                    @media (max-width: 767px){
+                        margin-top: 12px;
+                    }
                 }
                 button{
                     display: flex;
@@ -6007,9 +6024,137 @@
                     line-height: 48px;
                     border: 0;
                     padding: 0 16px;
+                    @include transition;
+                    &:hover{
+                        background: rgba(#c5c5c5, 0.5);
+                        backdrop-filter: blur(10px);
+                        -webkit-backdrop-filter: blur(10px);
+                    }
                     span{
                         margin-left: 10px;
                     }
+                }
+            }
+            .question--2{
+                ul{
+                    list-style: none;
+                    padding: 0;
+                    margin: 25px 0 0;
+                    li + li{
+                        margin-top: 12px;
+                    }
+                }
+                label{
+                    padding-left: 40px;
+                    position: relative;
+                    cursor: pointer;
+                    pointer-events: auto;
+                }
+                input{
+                    display: none;
+                }
+                label{
+                    min-height: 24px;
+                    display: flex;
+                    align-items: center;
+                    @media (max-width: 767px){
+                        min-height: auto;
+                    }
+                    span{
+                        width: 24px;
+                        height: 24px;
+                        background: #fff;
+                        border: 2px solid $color;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        &:after{
+                            content: '';
+                            background: url(../images/icon-checkbox.svg) center /cover;
+                            width: 24px;
+                            height: 24px;
+                            position: absolute;
+                            top: -2px;
+                            bottom: -2px;
+                            left: -2px;
+                            right: -2px;
+                            margin: auto;
+                            transform: scale(1.25);
+                            opacity: 0;
+                            visibility: hidden;
+                            @include transition;
+                        }
+                    }
+                }
+                input:checked ~ span:after{
+                    transform: scale(1);
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .question--buttons{
+                    margin-top: 24px;
+                }
+                .button--send{
+                    margin: auto;
+                    padding: 0 28px 0 32px;
+                    position: relative;
+                    background: rgba(#E5E5E5, 0.5);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    font: normal normal bold 16px/48px SVN-Circular;
+                    color: #010001;
+                    text-align: center;
+                    cursor: pointer;
+                    pointer-events: auto;
+                    height: 48px;
+                    outline: none;
+                    border: 0;
+                    border-radius: 0;
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        width: 4px;
+                        left: 0;
+                        bottom: 0;
+                        background: $color;
+                        transition: all 0.15s ease-out 0.15s;
+                        -webkit-transition: all 0.15s ease-out 0.15s;
+                    }
+                    &:hover{
+                        color: #fff;
+                        &:before{
+                            width: 100%;
+                        }
+                    }
+                }
+                .button--back{
+                    padding: 0 32px;
+                    font: normal normal bold 16px/48px SVN-Circular;
+                    color: #010001;
+                    text-align: center;
+                    cursor: pointer;
+                    pointer-events: auto;
+                    height: 48px;
+                    outline: none;
+                    border: 0;
+                    border-radius: 0;
+                    @include transition;
+                    background: transparent;
+                    &:hover{
+                        background: rgba(#c5c5c5, 0.5);
+                        backdrop-filter: blur(10px);
+                        -webkit-backdrop-filter: blur(10px);
+                    }
+                }
+            }
+            .question--success{
+                display: flex;
+                align-items: center;
+                min-height: 48px;
+                justify-content: center;
+                svg{
+                    margin-right: 16px;
                 }
             }
         }
