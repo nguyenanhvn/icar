@@ -8044,17 +8044,27 @@ sup {
   color: #F15A29;
   font: normal normal bold 16px/20px SVN-Circular;
 }
-.download .box-items .item .item--bottom a:hover img {
-  left: 4px;
-}
-.download .box-items .item .item--bottom a img {
-  position: relative;
-  left: 0;
-  transition: all 0.1s ease-out 0.1s;
-  -webkit-transition: all 0.1s ease-out 0.1s;
+.download .box-items .item .item--bottom a:hover span:after {
+  width: 100%;
 }
 .download .box-items .item .item--bottom a + a {
   margin-left: 18px;
+}
+.download .box-items .item .item--bottom a span {
+  position: relative;
+}
+.download .box-items .item .item--bottom a span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: -2px;
+  width: 0;
+  background: #F15A29;
+  height: 2px;
+  transition: all 0.1s ease-out 0.1s;
+  -webkit-transition: all 0.1s ease-out 0.1s;
 }
 
 .document {

@@ -5811,17 +5811,27 @@
                         color: $color;
                         font: normal normal bold 16px/20px SVN-Circular;
                         &:hover{
-                            img{
-                                left: 4px;
+                            span:after{
+                                width: 100%;
                             }
-                        }
-                        img{
-                            position: relative;
-                            left: 0;
-                            @include transition;
                         }
                         + a{
                             margin-left: 18px;
+                        }
+                        span{
+                            position: relative;
+                            &:after{
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                margin: auto;
+                                bottom: -2px;
+                                width: 0;
+                                background: $color;
+                                height: 2px;
+                                @include transition;
+                            }
                         }
                     }
                 }
