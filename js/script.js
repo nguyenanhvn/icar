@@ -137,6 +137,20 @@ jQuery(document).ready(function($) {
             },
         });
     } 
+    if (jQuery('.doptions .box-slider').length > 0) {
+        jQuery('.doptions .box-slider').owlCarousel({
+            loop: true,
+            nav: true,
+            autoplay: true,
+            dots: true,
+            items: 1,
+            margin: 24,
+            navText: [
+                '<div class="nav__prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="#fff" opacity="0"/><g id="arrow-left"><path d="M16132.414,1882.83h0l-1.414-1.414,1.414-1.414,6-6,1.415,1.414-5,5h11.585v2h-11.588l5,5-1.415,1.414Z" transform="translate(-16127.414 -1869.414)" fill="#fff"/></g></svg></div>',
+                '<div class="nav__next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="#fff" opacity="0"/><g id="arrow-right"><path d="M16097.588,1887.414l5-5H16091v-2h11.589l-5-5L16099,1874l6,6,1.414,1.415-7.417,7.413Z" transform="translate(-16086 -1869.414)" fill="#fff"/></g></svg></div>'
+            ],
+        });
+    } 
 
 // Filter Listing
     jQuery(document).on('click', '.box-filter .filter--sort', function() {
@@ -484,19 +498,7 @@ jQuery(document).ready(function($) {
     }
 
 // Scroll Gioi Thieu
-    if(jQuery(window).width() > 992){
-        setTimeout(function(){
-            var height = jQuery('.introduce5').outerHeight() + jQuery('.introduce6').outerHeight() + jQuery('.introduce7').outerHeight() + jQuery('.introduce8').outerHeight() + jQuery('.footer').outerHeight();
-            console.log(height);
-            jQuery(".introduce4 .img--items").sticky({ 
-                topSpacing: 200, 
-                // bottomSpacing: jQuery('.introduce5').outerHeight() + jQuery('.introduce6').outerHeight() + jQuery('.introduce7').outerHeight() + jQuery('.introduce8').outerHeight() + jQuery('.footer').outerHeight(), 
-                bottomSpacing: height + 120,
-                // getWidthFrom: '60' 
-            });
-        }, 500);
-    }
-    jQuery(window).resize(function(){
+    if(jQuery('.introduce4').length > 0){
         if(jQuery(window).width() > 992){
             setTimeout(function(){
                 var height = jQuery('.introduce5').outerHeight() + jQuery('.introduce6').outerHeight() + jQuery('.introduce7').outerHeight() + jQuery('.introduce8').outerHeight() + jQuery('.footer').outerHeight();
@@ -508,82 +510,98 @@ jQuery(document).ready(function($) {
                     // getWidthFrom: '60' 
                 });
             }, 500);
-        } else {
-            jQuery(".tw__component__1 .tw__component__box__slider").unstick();
         }
-    });
-    if(jQuery('#c2').offset().top < $(document).scrollTop() + 300){
-        if (jQuery('#c3').offset().top < $(document).scrollTop() + 300){
+        jQuery(window).resize(function(){
+            if(jQuery(window).width() > 992){
+                setTimeout(function(){
+                    var height = jQuery('.introduce5').outerHeight() + jQuery('.introduce6').outerHeight() + jQuery('.introduce7').outerHeight() + jQuery('.introduce8').outerHeight() + jQuery('.footer').outerHeight();
+                    console.log(height);
+                    jQuery(".introduce4 .img--items").sticky({ 
+                        topSpacing: 200, 
+                        // bottomSpacing: jQuery('.introduce5').outerHeight() + jQuery('.introduce6').outerHeight() + jQuery('.introduce7').outerHeight() + jQuery('.introduce8').outerHeight() + jQuery('.footer').outerHeight(), 
+                        bottomSpacing: height + 120,
+                        // getWidthFrom: '60' 
+                    });
+                }, 500);
+            } else {
+                jQuery(".tw__component__1 .tw__component__box__slider").unstick();
+            }
+        });
+    }
+    if(jQuery('#c1').length > 0 && jQuery('#c2').length > 0){
+        if(jQuery('#c2').offset().top < $(document).scrollTop() + 300){
+            if (jQuery('#c3').offset().top < $(document).scrollTop() + 300){
+                $("[data-id=c1]").css('opacity', 0);
+                $("[data-id=c2]").css('opacity', 0);
+                $("[data-id=c3]").css('opacity', 1);
+            } else {
+                $("[data-id=c1]").css('opacity', 0);
+                $("[data-id=c3]").css('opacity', 0);
+                $("[data-id=c2]").css('opacity', 1);
+            }
+        } else if($(document).scrollTop() + 300 > jQuery('#c3').offset().top) {
             $("[data-id=c1]").css('opacity', 0);
             $("[data-id=c2]").css('opacity', 0);
             $("[data-id=c3]").css('opacity', 1);
         } else {
-            $("[data-id=c1]").css('opacity', 0);
             $("[data-id=c3]").css('opacity', 0);
-            $("[data-id=c2]").css('opacity', 1);
+            $("[data-id=c2]").css('opacity', 0);
+            $("[data-id=c1]").css('opacity', 1);
         }
-    } else if($(document).scrollTop() + 300 > jQuery('#c3').offset().top) {
-        $("[data-id=c1]").css('opacity', 0);
-        $("[data-id=c2]").css('opacity', 0);
-        $("[data-id=c3]").css('opacity', 1);
-    } else {
-        $("[data-id=c3]").css('opacity', 0);
-        $("[data-id=c2]").css('opacity', 0);
-        $("[data-id=c1]").css('opacity', 1);
+        var lastScrollTop = 0, delta = 5;
+        $(window).scroll(function(){
+            if(jQuery('.introduce6').offset().top > $(document).scrollTop() + 500){
+                
+            }
+            var nowScrollTop = $(this).scrollTop();
+            if(Math.abs(lastScrollTop - nowScrollTop) >= delta){
+                 if (nowScrollTop > lastScrollTop){
+                    if(jQuery('#c2').offset().top < $(document).scrollTop() + 300){
+                        if (jQuery('#c3').offset().top < $(document).scrollTop() + 300){
+                            $("[data-id=c1]").css('opacity', 0);
+                            $("[data-id=c2]").css('opacity', 0);
+                            $("[data-id=c3]").css('opacity', 1);
+                        } else {
+                            $("[data-id=c1]").css('opacity', 0);
+                            $("[data-id=c3]").css('opacity', 0);
+                            $("[data-id=c2]").css('opacity', 1);
+                        }
+                    } else if($(document).scrollTop() + 300 > jQuery('#c3').offset().top) {
+                        $("[data-id=c1]").css('opacity', 0);
+                        $("[data-id=c2]").css('opacity', 0);
+                        $("[data-id=c3]").css('opacity', 1);
+                    } else {
+                        $("[data-id=c3]").css('opacity', 0);
+                        $("[data-id=c2]").css('opacity', 0);
+                        $("[data-id=c1]").css('opacity', 1);
+                    }
+                     // SCROLLING DOWN 
+                 } else {
+                    if(jQuery('#c2').offset().top < $(document).scrollTop() + 600){
+                        if (jQuery('#c3').offset().top < $(document).scrollTop() + 600){
+                            $("[data-id=c1]").css('opacity', 0);
+                            $("[data-id=c2]").css('opacity', 0);
+                            $("[data-id=c3]").css('opacity', 1);
+                        } else {
+                            $("[data-id=c1]").css('opacity', 0);
+                            $("[data-id=c3]").css('opacity', 0);
+                            $("[data-id=c2]").css('opacity', 1);
+                        }
+                    } else if($(document).scrollTop() + 600 > jQuery('#c3').offset().top) {
+                        $("[data-id=c1]").css('opacity', 0);
+                        $("[data-id=c2]").css('opacity', 0);
+                        $("[data-id=c3]").css('opacity', 1);
+                    } else {
+                        $("[data-id=c3]").css('opacity', 0);
+                        $("[data-id=c2]").css('opacity', 0);
+                        $("[data-id=c1]").css('opacity', 1);
+                    }
+                     // SCROLLING UP 
+                }
+                lastScrollTop = nowScrollTop;
+            }
+        });
     }
-    var lastScrollTop = 0, delta = 5;
-	$(window).scroll(function(){
-        if(jQuery('.introduce6').offset().top > $(document).scrollTop() + 500){
-            
-        }
-		var nowScrollTop = $(this).scrollTop();
-		if(Math.abs(lastScrollTop - nowScrollTop) >= delta){
-		 	if (nowScrollTop > lastScrollTop){
-                if(jQuery('#c2').offset().top < $(document).scrollTop() + 300){
-                    if (jQuery('#c3').offset().top < $(document).scrollTop() + 300){
-                        $("[data-id=c1]").css('opacity', 0);
-                        $("[data-id=c2]").css('opacity', 0);
-                        $("[data-id=c3]").css('opacity', 1);
-                    } else {
-                        $("[data-id=c1]").css('opacity', 0);
-                        $("[data-id=c3]").css('opacity', 0);
-                        $("[data-id=c2]").css('opacity', 1);
-                    }
-                } else if($(document).scrollTop() + 300 > jQuery('#c3').offset().top) {
-                    $("[data-id=c1]").css('opacity', 0);
-                    $("[data-id=c2]").css('opacity', 0);
-                    $("[data-id=c3]").css('opacity', 1);
-                } else {
-                    $("[data-id=c3]").css('opacity', 0);
-                    $("[data-id=c2]").css('opacity', 0);
-                    $("[data-id=c1]").css('opacity', 1);
-                }
-		 		// SCROLLING DOWN 
-		 	} else {
-                if(jQuery('#c2').offset().top < $(document).scrollTop() + 600){
-                    if (jQuery('#c3').offset().top < $(document).scrollTop() + 600){
-                        $("[data-id=c1]").css('opacity', 0);
-                        $("[data-id=c2]").css('opacity', 0);
-                        $("[data-id=c3]").css('opacity', 1);
-                    } else {
-                        $("[data-id=c1]").css('opacity', 0);
-                        $("[data-id=c3]").css('opacity', 0);
-                        $("[data-id=c2]").css('opacity', 1);
-                    }
-                } else if($(document).scrollTop() + 600 > jQuery('#c3').offset().top) {
-                    $("[data-id=c1]").css('opacity', 0);
-                    $("[data-id=c2]").css('opacity', 0);
-                    $("[data-id=c3]").css('opacity', 1);
-                } else {
-                    $("[data-id=c3]").css('opacity', 0);
-                    $("[data-id=c2]").css('opacity', 0);
-                    $("[data-id=c1]").css('opacity', 1);
-                }
-		 		// SCROLLING UP 
-			}
-		    lastScrollTop = nowScrollTop;
-		}
-	});
 });
 function copy(copyText) {
     // Copy the text inside the text field

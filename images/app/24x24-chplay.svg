@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+  <g id="_24x24-chplay" data-name="24x24-chplay" transform="translate(1 1)">
+    <path id="boundingbox" d="M0,0H24V24H0Z" fill="#f15a29" stroke="#010001" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0"/>
+    <path id="chplay" d="M3.6,1.814l10,10-10,10a.978.978,0,0,1-.6-.9V2.717a.982.982,0,0,1,.6-.9ZM14.289,12.508l2.26,2.26L5.812,20.985l8.477-8.477Zm3.141-3.14,2.756,1.6a.982.982,0,0,1,0,1.7l-2.757,1.6-2.446-2.446ZM5.812,2.643,16.55,8.859,14.289,11.12,5.812,2.643Z" transform="translate(0.163 0.186)" fill="#f15a29"/>
+  </g>
+</svg>
