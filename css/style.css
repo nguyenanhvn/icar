@@ -9628,7 +9628,7 @@ sup {
   background: #191919;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .introduce4 {
     padding: 60px 0;
   }
@@ -9681,6 +9681,9 @@ sup {
 
 .introduce4 .box .box-scroll .scroll--img .img--items {
   height: 536px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 150px;
 }
 
 .introduce4 .box .box-scroll .scroll--img .img--items .item {
@@ -9840,6 +9843,29 @@ sup {
   position: relative;
 }
 
+.introduce5 .box-grid .grid--left .grid--text .text--flex .text--box[data-index="0"] span:nth-child(1) {
+  -webkit-text-stroke: 1px #F15A29;
+  color: #F15A29;
+}
+
+.introduce5 .box-grid .grid--left .grid--text .text--flex .text--box[data-index="1"] {
+  top: -83px;
+}
+
+.introduce5 .box-grid .grid--left .grid--text .text--flex .text--box[data-index="1"] span:nth-child(2) {
+  -webkit-text-stroke: 1px #F15A29;
+  color: #F15A29;
+}
+
+.introduce5 .box-grid .grid--left .grid--text .text--flex .text--box[data-index="2"] {
+  top: -166px;
+}
+
+.introduce5 .box-grid .grid--left .grid--text .text--flex .text--box[data-index="2"] span:nth-child(3) {
+  -webkit-text-stroke: 1px #F15A29;
+  color: #F15A29;
+}
+
 .introduce5 .box-grid .grid--left .grid--text .text--flex .text--box span {
   display: block;
   font: normal normal 500 70px/1.2 SVN-Circular;
@@ -9847,11 +9873,6 @@ sup {
   color: transparent;
   -webkit-text-stroke: 1px #d5d5d5;
   text-align: right;
-}
-
-.introduce5 .box-grid .grid--left .grid--text .text--flex .text--box span.active {
-  -webkit-text-stroke: 1px #F15A29;
-  color: #F15A29;
 }
 
 @media (max-width: 1200px) {
@@ -10670,21 +10691,17 @@ sup {
   margin-left: 10px;
 }
 
-.dnews .box-question .question--2 ul {
-  list-style: none;
-  padding: 0;
+.dnews .box-question .question--2 .question--list {
+  display: block;
   margin: 25px 0 0;
 }
 
-.dnews .box-question .question--2 ul li + li {
-  margin-top: 12px;
+.dnews .box-question .question--2 .question--list .wpcf7-list-item {
+  display: block;
 }
 
-.dnews .box-question .question--2 label {
-  padding-left: 40px;
-  position: relative;
-  cursor: pointer;
-  pointer-events: auto;
+.dnews .box-question .question--2 .question--list .wpcf7-list-item + .wpcf7-list-item {
+  margin-top: 12px;
 }
 
 .dnews .box-question .question--2 input {
@@ -10699,6 +10716,10 @@ sup {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-left: 40px;
+  position: relative;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 @media (max-width: 767px) {
@@ -10707,7 +10728,8 @@ sup {
   }
 }
 
-.dnews .box-question .question--2 label span {
+.dnews .box-question .question--2 label span:before {
+  content: '';
   width: 24px;
   height: 24px;
   background: #fff;
@@ -10723,10 +10745,9 @@ sup {
   width: 24px;
   height: 24px;
   position: absolute;
-  top: -2px;
-  bottom: -2px;
-  left: -2px;
-  right: -2px;
+  top: 0;
+  bottom: 0;
+  left: 0;
   margin: auto;
   -webkit-transform: scale(1.25);
           transform: scale(1.25);

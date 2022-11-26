@@ -5584,7 +5584,7 @@
     .introduce4{
         padding: 180px 0;
         background: #191919;
-        @media (max-width: 992px){
+        @media (max-width: 1200px){
             padding: 60px 0;
         }
         .box{
@@ -5614,6 +5614,8 @@
                     }
                     .img--items{
                         height: 536px;
+                        position: sticky;
+                        top: 150px;
                         .item{
                             position: absolute;
                             left: 0;
@@ -5726,6 +5728,26 @@
                         margin-top: 110px;
                         .text--box{
                             position: relative;
+                            &[data-index="0"]{
+                                span:nth-child(1){
+                                    -webkit-text-stroke: 1px $color;
+                                    color: $color;
+                                }
+                            }
+                            &[data-index="1"]{
+                                top: -83px;
+                                span:nth-child(2){
+                                    -webkit-text-stroke: 1px $color;
+                                    color: $color;
+                                }
+                            }
+                            &[data-index="2"]{
+                                top: -166px;
+                                span:nth-child(3){
+                                    -webkit-text-stroke: 1px $color;
+                                    color: $color;
+                                }
+                            }
                             span{
                                 display: block;
                                 font: normal normal 500 70px/1.2 SVN-Circular;
@@ -5733,10 +5755,6 @@
                                 color: transparent;
                                 -webkit-text-stroke: 1px #d5d5d5;
                                 text-align: right;
-                                &.active{
-                                    -webkit-text-stroke: 1px $color;
-                                    color: $color;
-                                }
                                 @media (max-width: 1200px){
                                     font-size: 52px;
                                 }
@@ -6288,19 +6306,15 @@
                 }
             }
             .question--2{
-                ul{
-                    list-style: none;
-                    padding: 0;
+                .question--list{
+                    display: block;
                     margin: 25px 0 0;
-                    li + li{
-                        margin-top: 12px;
+                    .wpcf7-list-item{
+                        display: block;
+                        + .wpcf7-list-item{
+                            margin-top: 12px;
+                        }
                     }
-                }
-                label{
-                    padding-left: 40px;
-                    position: relative;
-                    cursor: pointer;
-                    pointer-events: auto;
                 }
                 input{
                     display: none;
@@ -6309,27 +6323,33 @@
                     min-height: 24px;
                     display: flex;
                     align-items: center;
+                    padding-left: 40px;
+                    position: relative;
+                    cursor: pointer;
+                    pointer-events: auto;
                     @media (max-width: 767px){
                         min-height: auto;
                     }
                     span{
-                        width: 24px;
-                        height: 24px;
-                        background: #fff;
-                        border: 2px solid $color;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
+                        &:before{
+                            content: '';
+                            width: 24px;
+                            height: 24px;
+                            background: #fff;
+                            border: 2px solid $color;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                        }
                         &:after{
                             content: '';
                             background: url(../images/icon-checkbox.svg) center /cover;
                             width: 24px;
                             height: 24px;
                             position: absolute;
-                            top: -2px;
-                            bottom: -2px;
-                            left: -2px;
-                            right: -2px;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
                             margin: auto;
                             transform: scale(1.25);
                             opacity: 0;
