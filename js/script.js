@@ -240,7 +240,7 @@ jQuery(document).ready(function($) {
         jQuery('.menu-responsive').toggleClass('open');
         jQuery('body').toggleClass('none-scroll');
     });
-    jQuery(document).on('click', '.menu-responsive .menu-item-has-children span', function(){
+    jQuery(document).on('click', '.menu-responsive .menu-item-has-children span, .menu-responsive .menu-item-has-children > a', function(){
         jQuery('.menu2-responsive .menu--top span').html(jQuery(this).text());
         jQuery('.menu2-responsive .menu--box').html(jQuery(this).parent().find('.sub-menu').html());
         jQuery('.menu2-responsive').addClass('open');

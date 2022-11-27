@@ -2589,26 +2589,6 @@ sup {
   }
 }
 
-.search .box .box-result .result--menus li.current-menu-item a,
-.search .box .box-result .result--menus li.current-menu-item span, .search .box .box-result .result--menus li.current_page_item a,
-.search .box .box-result .result--menus li.current_page_item span {
-  color: #010001 !important;
-  padding-left: 10px;
-  position: relative;
-}
-
-.search .box .box-result .result--menus li.current-menu-item a:after,
-.search .box .box-result .result--menus li.current-menu-item span:after, .search .box .box-result .result--menus li.current_page_item a:after,
-.search .box .box-result .result--menus li.current_page_item span:after {
-  content: '';
-  width: 2px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  background: #F15A29;
-}
-
 .search .box .box-result .result--menus li + li {
   margin-left: 34px;
 }
@@ -2619,20 +2599,47 @@ sup {
   }
 }
 
+.search .box .box-result .result--menus li button,
 .search .box .box-result .result--menus li span,
 .search .box .box-result .result--menus li a {
   font: normal normal bold 16px/20px SVN-Circular;
   color: #999999;
   transition: all 0.1s ease-out 0.1s;
   -webkit-transition: all 0.1s ease-out 0.1s;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0 0 0 10px;
 }
 
+.search .box .box-result .result--menus li button.active,
+.search .box .box-result .result--menus li span.active,
+.search .box .box-result .result--menus li a.active {
+  color: #010001 !important;
+  padding-left: 10px;
+  position: relative;
+}
+
+.search .box .box-result .result--menus li button.active:after,
+.search .box .box-result .result--menus li span.active:after,
+.search .box .box-result .result--menus li a.active:after {
+  content: '';
+  width: 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #F15A29;
+}
+
+.search .box .box-result .result--menus li button:hover,
 .search .box .box-result .result--menus li span:hover,
 .search .box .box-result .result--menus li a:hover {
   color: #F15A29;
 }
 
 @media (max-width: 767px) {
+  .search .box .box-result .result--menus li button,
   .search .box .box-result .result--menus li span,
   .search .box .box-result .result--menus li a {
     font-size: 14px;
@@ -2696,6 +2703,12 @@ sup {
 .search .box .box-result .result--items .item .item--title a {
   font: normal normal 500 20px/24px SVN-Circular;
   color: #010001;
+  transition: all 0.15s ease-out 0.15s;
+  -webkit-transition: all 0.15s ease-out 0.15s;
+}
+
+.search .box .box-result .result--items .item .item--title a:hover {
+  color: #F15A29;
 }
 
 @media (max-width: 450px) {
