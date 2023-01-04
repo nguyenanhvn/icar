@@ -439,10 +439,6 @@ jQuery(document).ready(function($) {
                 h = this.parentNode.previousSibling;
                 for (i = 0; i < sl; i++) {
                     if (s.options[i].innerHTML == this.innerHTML) {
-                        data = {
-                            'action' : 'district_ajax',
-                            'province': s.options[i].getAttribute('data-provinceid'),
-                        };
                         s.selectedIndex = i;
                         h.innerHTML = this.innerHTML;
                         h.id = this.id;
@@ -464,40 +460,10 @@ jQuery(document).ready(function($) {
                 jQuery('.dropdown--options').addClass('select-hide');
                 jQuery(this).closest('.dropdown').find('.dropdown--current span').html(jQuery(this).text());
                 // 
-                jQuery.ajax({
-                    url : ajax_loadmore_params.ajaxurl, // AJAX handler
-                    data : data,
-                    type : 'POST',
-                    success : function( data ){
-                        if( data ) { 
-                            jQuery('#quan').closest('.dropdown').find('.dropdown--current span').text(jQuery('#quan').closest('.dropdown').find('.dropdown--current span').attr('text'));
-                            jQuery('#quan ul').empty();
-                            jQuery('#quan ul').append('<li><label>Tất cả<input type="checkbox" name="quan" value="all" data-id="-1"><span></span></label></li>');
-                            jQuery('#quan ul').append(data); // insert new posts
-                        }
-                    }
-                });
             });
             b.appendChild(c);
         }
         
-        data = {
-            'action' : 'district_ajax',
-            'province': jQuery('#province').val(),
-        };
-        jQuery.ajax({
-            url : ajax_loadmore_params.ajaxurl, // AJAX handler
-            data : data,
-            type : 'POST',
-            success : function( data ){
-                if( data ) { 
-                    jQuery('#quan').closest('.dropdown').find('.dropdown--current span').text(jQuery('#quan').closest('.dropdown').find('.dropdown--current span').attr('text'));
-                    jQuery('#quan ul').empty();
-                    jQuery('#quan ul').append('<li><label>Tất cả<input type="checkbox" name="quan" value="all" data-id="-1"><span></span></label></li>');
-                    jQuery('#quan ul').append(data); // insert new posts
-                }
-            }
-        });
         x[i].appendChild(b);
     }
     jQuery(document).click(function (e){
