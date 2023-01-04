@@ -194,16 +194,16 @@
         }
     }
     .conn_text{
-        font: normal normal normal 20px/1.5 SVN-Circular;
+        font: normal normal normal 18px/1.4 SVN-Circular;
         letter-spacing: 0px;
         color: #E5E5E5;
         max-width: 1100px;
         margin-top: 24px;
         @media (max-width: 992px){
-            font-size: 18px;
+            font-size: 16px;
         }
         @media (max-width: 450px){
-            font-size: 16px;
+            font-size: 15px;
         }
     }
     
@@ -766,4 +766,7 @@
     [role~="tooltip"][data-microtip-size="large"]::after {
         white-space: initial;
         width: 260px
+    }
+    .wpcf7-not-valid-tip + .wpcf7-not-valid-tip{
+        display: none !important;
     }

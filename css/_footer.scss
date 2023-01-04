@@ -141,6 +141,7 @@
                         }
                         @media (min-width: 993px){
                             &.child--grid2{
+                                padding-right: 40px;
                                 ul{
                                     display: grid;
                                     grid-template-columns: repeat(2, minmax(10px, 1fr));
@@ -223,8 +224,9 @@
                     grid-gap: 20px;
                 }
                 .bottom--left{
-                    img{
+                    img, svg{
                         max-height: 44px;
+                        width: auto;
                         margin-right: 16px;
                     }
                     .text{
@@ -242,7 +244,7 @@
                     span{
                         margin-right: 12px;
                         @media (max-width: 450px){
-                            margin: 0 0 12px 0;
+                            margin: 0 32px 12px 0;
                         }
                     }
                     ul{
@@ -272,7 +274,8 @@
                                     left: 0;
                                 @include transition;
                                 }
-                                img{
+                                img,
+                                svg{
                                     position: absolute;
                                     top: 0;
                                     left: 0;
